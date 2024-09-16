@@ -1,26 +1,38 @@
+"use client"
 import React from "react";
-import { profile } from "@/lib/data/data";
-import Link from "next/link";
-import { SiLinkedin, SiGithub, SiInstagram, SiX } from "react-icons/si";
+import { FloatingDock } from "@/components/ui/floating-dock";
+import {
+  IconHome,
+  IconNewSection,
+  IconTerminal2,
+  IconTextCaption
+} from "@tabler/icons-react";
+import Image from "next/image";
 
-export const Navbar = () => {
-  const { socials } = profile;
+export function FloatingDockDemo() {
+  const links = [
+    {
+      title: "Home",
+      icon: (
+        <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/",
+    },
 
+    {
+      title: "Products",
+      icon: (
+        <IconTextCaption className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/about",
+    },
+  ];
   return (
-    <nav className="py-10 flex justify-between">
-      <h1 className="text-2xl font-bold underline underline-offset-8 decoration-green-500 rotate-2">JESUS CLEMENTE 🧑🏻‍💻</h1>
-      <div className="flex items-center gap-5">
-        {socials.map((social) => {
-          return (
-            <Link className="w-5 h-5 hover:scale-125 transition-all" key={social.label} href={social.link} target="_blank">
-                {social.label === "LinkedIn" && <SiLinkedin />}
-                {social.label === "GitHub" && <SiGithub />}
-                {social.label === "Instagram" && <SiInstagram />}
-                {social.label === "X" && <SiX />}
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
+    <div className="sticky top-0 z-50 p-4 flex items-center justify-center w-full">
+      <FloatingDock
+        mobileClassName="translate-y-20" // only for demo, remove for production
+        items={links}
+      />
+    </div>
   );
-};
+}

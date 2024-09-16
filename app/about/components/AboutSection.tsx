@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { profile } from "@/lib/data/data";
 
-export const AboutSection = () => {
+export default function AboutSection() {
   const {
     profileImg,
     alias,
