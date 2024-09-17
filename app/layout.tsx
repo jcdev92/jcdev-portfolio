@@ -4,7 +4,7 @@ import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { FloatingDockDemo } from "./(home)/components/Navbar";
-import { Transition } from "@/components/ui/transition";
+import Template from "./template";
 
 export const metadata: Metadata = {
   title: "JC DEV",
@@ -33,9 +33,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <main className="bg-black/65">
-              <Transition>
+              <Template>
                 {children}
-              </Transition>
+              </Template>
               <FloatingDockDemo />
             </main>
           </ThemeProvider>
