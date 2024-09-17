@@ -1,9 +1,9 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
+import { FloatingDockDemo } from "../components/ui/navbar/Navbar";
 import "./globals.css";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { FloatingDockDemo } from "./(home)/components/Navbar";
 import Template from "./template";
 
 export const metadata: Metadata = {
@@ -33,9 +33,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <main className="bg-black/65">
-              <Template>
-                {children}
-              </Template>
+              <Template>{children}</Template>
               <FloatingDockDemo />
             </main>
           </ThemeProvider>
@@ -45,4 +43,3 @@ export default function RootLayout({
     </>
   );
 }
-

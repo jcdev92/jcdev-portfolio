@@ -1,13 +1,10 @@
 "use client"
 import React from "react";
-import { FloatingDock } from "@/components/ui/floating-dock";
+import { FloatingDock } from "@/components/ui/navbar/floating-dock";
 import {
   IconHome,
-  IconNewSection,
-  IconTerminal2,
   IconTextCaption
 } from "@tabler/icons-react";
-import Image from "next/image";
 
 export function FloatingDockDemo() {
   const links = [
@@ -18,7 +15,6 @@ export function FloatingDockDemo() {
       ),
       href: "/",
     },
-
     {
       title: "Who is JC DEV?",
       icon: (
