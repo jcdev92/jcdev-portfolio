@@ -32,12 +32,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <header>
+            <main className="bg-black/65">
               <Transition>
                 {children}
               </Transition>
               <FloatingDockDemo />
-            </header>
+            </main>
           </ThemeProvider>
           <BackgroundBeams />
         </body>

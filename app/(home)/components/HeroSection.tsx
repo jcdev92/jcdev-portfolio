@@ -1,6 +1,6 @@
-import { SparklesCore } from "@/components/ui/sparkles";
 import React from "react";
-import { TypewriterEffect } from '../../../components/ui/typewriter-effect';
+import { TypewriterEffect } from "../../../components/ui/typewriter-effect";
+import Image from "next/image";
 
 export const Hero = () => {
   const words = [
@@ -24,21 +24,9 @@ export const Hero = () => {
   ];
 
   return (
-    <div className="h-[40rem] relative w-full bg-transparent flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <div className="w-full absolute inset-0 h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
-      </div>
-      <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center text-white relative z-20">
-        <TypewriterEffect words={words} />
-      </h1>
+    <div className="h-full border w-full flex flex-col items-center justify-center gap-10 overflow-hidden rounded-md">
+      <Image alt="hero" src="/hero.jpg" width={300} height={300} className="rounded-full object-cover max-w-full h-auto shadow-md shadow-primary-foreground" />
+      <TypewriterEffect words={words} />      
     </div>
   );
 };

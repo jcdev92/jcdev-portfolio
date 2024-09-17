@@ -20,7 +20,7 @@ export function FloatingDockDemo() {
     },
 
     {
-      title: "Products",
+      title: "Who is JC DEV?",
       icon: (
         <IconTextCaption className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
