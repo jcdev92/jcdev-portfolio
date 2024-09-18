@@ -26,7 +26,7 @@ export function FloatingDockDemo() {
   return (
     <div className="sticky bottom-0 z-50 p-10 flex items-center justify-center w-full">
       <FloatingDock
-        mobileClassName="translate-y-20" // only for demo, remove for production
+        mobileClassName="" // only for demo, remove for production
         items={links}
       />
     </div>

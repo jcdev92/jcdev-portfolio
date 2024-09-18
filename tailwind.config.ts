@@ -1,14 +1,14 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+import addVariablesForColors from "./lib/plugins/addVariablesForColors";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
-  prefix: "",
+  ],
   theme: {
     container: {
       center: true,
@@ -73,11 +73,8 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
-    textShadow: {
-      custom: '35px 35px 35px rgba(33, 15, 152, 0.25)',
-    },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
+};
 
-export default config
+export default config;
