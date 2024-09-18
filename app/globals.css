@@ -41,7 +41,7 @@
     --primary: 0 0% 98%;
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 40%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
     --accent: 240 3.7% 15.9%;
@@ -70,7 +70,7 @@
 }
 
 @layer components {
-  .text-shadow-custom {
+  .text-shadow-alias {
     text-shadow: 2px 2px 5px rgba(33, 15, 152, 0.5);
   }
 }

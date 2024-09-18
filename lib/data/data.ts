@@ -4,7 +4,7 @@ export const profile: JcDev = {
   firstName: "Jesus Maria",
   lastName: "Clemente Garcia",
   alias: "JC DEV",
-  email: "jcdeveloper92@gmail.com",
+  mail: "jcdeveloper92@gmail.com",
   phone: "+584120799500",
   birthDay: "1992-06-16T00:00:00.000Z",
   gender: "Male",
@@ -83,6 +83,10 @@ export const profile: JcDev = {
     {
       label: "X",
       link: "https://www.x.com/jcdev92",
+    },
+    {
+      label: "Vercel",
+      link: "https://vercel.com/jcdev92s-projects",
     },
   ],
   projects: [   

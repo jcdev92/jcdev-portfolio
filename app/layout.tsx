@@ -32,12 +32,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="bg-black/65 relative z-10">
+            <main className="relative z-10">
               <Template>{children}</Template>
               <FloatingDockDemo />
             </main>
           </ThemeProvider>
-          <BackgroundBeams className="absolute inset-0 z-0" />
+          <BackgroundBeams className="absolute inset-0 z-0 bg-background" />
         </body>
       </html>
     </>

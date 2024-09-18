@@ -2,7 +2,7 @@ export interface JcDev {
     firstName: string;
     lastName: string;
     alias: string;
-    email: string;
+    mail: string;
     phone: string;
     birthDay: string;
     gender: string;

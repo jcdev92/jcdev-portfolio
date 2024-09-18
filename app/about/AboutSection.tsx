@@ -16,11 +16,11 @@ export default function AboutSection() {
     },
     {
       text: "JC",
-      className: "text-blue-500 text-shadow-custom dark:text-yellow-500",
+      className: "text-blue-500 text-shadow-alias dark:text-yellow-500",
     },
     {
       text: "DEV",
-      className: "text-blue-500 text-shadow-custom dark:text-yellow-500",
+      className: "text-blue-500 text-shadow-alias dark:text-yellow-500",
     },
     {
       text: "?",
@@ -37,11 +37,11 @@ export default function AboutSection() {
         <TypewriterEffect words={words} className="p-10"/>
         <div className="flex flex-col gap-10">
           <div className="p-4 md:p-10">
-            <h2 className="text-bold text-2xl mb-3">{jobTitle}</h2>
-            <p className="mb-5 text-sm text-gray-400">
+            <h2 className="text-bold text-2xl mb-3 text-primary-foreground">{jobTitle}</h2>
+            <p className="mb-5 text-sm text-secondary-foreground">
               Providing web solutions
             </p>
-            <p className="text-gray-500 text-justify leading-10">
+            <p className="text-secondary-foreground text-justify leading-10">
               {`${aboutMe}`}
             </p>
           </div>
@@ -50,3 +50,4 @@ export default function AboutSection() {
     </section>
   );
 }
+

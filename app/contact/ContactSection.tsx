@@ -1,63 +1,97 @@
-import Image from "next/image";
 import { profile } from "@/lib/data/data";
-import { IconPhone, IconMail, IconBrandWhatsapp, IconBrandLinkedin, IconBrandTwitter, IconBrandGithub, IconBrandInstagram, IconBrandVercel } from "@tabler/icons-react"
+import {
+  IconPhone,
+  IconMail,
+  IconBrandWhatsapp,
+  IconBrandLinkedin,
+  IconBrandX,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandVercel,
+  IconProps,
+} from "@tabler/icons-react";
+import ContactLink from "./components/ContactLink";
+import ProfileCard from "./components/ProfileCard";
 
 export default function ContactSection() {
-  const { alias, firstName, lastName, city, country, birthDay, gender, phone, email } = profile;
-  
-  const formatedBirthday = new Date(birthDay).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
+  const {
+    alias,
+    firstName,
+    lastName,
+    birthDay,
+    city,
+    country,
+    gender,
+    phone,
+    mail,
+    socials,
+  } = profile;
+
+  type SocialLabels = "Instagram" | "LinkedIn" | "X" | "GitHub" | "Vercel";
+
+  const iconMap: Record<SocialLabels, React.ComponentType<IconProps>> = {
+    Instagram: IconBrandInstagram,
+    LinkedIn: IconBrandLinkedin,
+    X: IconBrandX,
+    GitHub: IconBrandGithub,
+    Vercel: IconBrandVercel,
+  };
+
+  type ContactLabels = "Phone" | "Mail" | "Whatsapp";
+
+  interface ContactLink {
+    href: string;
+    icon: React.ComponentType<IconProps>;
+  }
+
+  const contactMap: Record<ContactLabels, ContactLink> = {
+    Phone: {
+      href: `tel:${phone}`,
+      icon: IconPhone,
+    },
+    Mail: {
+      href: `mailto:${mail}`,
+      icon: IconMail,
+    },
+    Whatsapp: {
+      href: `https://wa.me/${phone}`,
+      icon: IconBrandWhatsapp,
+    },
+  };
 
   return (
     <div className="w-full h-screen">
       <div className="w-full h-full flex justify-center items-center">
-        <div className="flex flex-col border relative z-50">
-          <div className="flex flex-col md:flex-row justify-center items-center border gap-10 p-10">
-            <Image
-              alt="hero"
-              src="/hero.jpg"
-              width={300}
-              height={300}
-              className="rounded-full object-cover max-w-full h-auto shadow-md shadow-primary-foreground"
-            />
-            <div className="text-center md:text-left">
-              <h1 className="text-3xl font-bold text-yellow-500 text-shadow-custom">{`${alias}`}</h1>
-              <h1 className="text-3xl font-bold text-gray-900">{`${firstName}`}</h1>
-              <h1 className="text-3xl font-bold text-gray-900">{`${lastName}`}</h1>
-              <p className="text-sm text-gray-500">{`${city}, ${country} `}</p>
-              <p className="text-sm text-gray-400">{`${formatedBirthday} `}</p>
-              <p className="text-sm text-gray-500">{`${gender} `}</p>
-            </div>
-          </div>
-          <div className="flex border items-center justify-around p-5">
-            <a href={`tel:${phone}`} className="flex items-center hover:text-yellow-300">
-              <IconPhone size={20} />
-            </a>
-            <a href={`mailto:${email}`} className="flex items-center hover:text-yellow-300">
-              <IconMail size={20} />
-            </a>
-            <a href={`XXXXXXXXXXXXXX${phone}`} className="flex items-center hover:text-yellow-300">
-              <IconBrandWhatsapp size={20} />
-            </a>
-            <a href={`XXXXXXXXXXXXXXXXXXXXXXXXXXXX${alias}`} className="flex items-center hover:text-yellow-300">
-              <IconBrandLinkedin size={20} />
-            </a>
-            <a href={`XXXXXXXXXXXXXXXXXXXXXXXXXXXX${alias}`} className="flex items-center hover:text-yellow-300">
-              <IconBrandTwitter size={20} />
-            </a>
-            <a href={`XXXXXXXXXXXXXXXXXXXXXXXXXXXX${alias}`} className="flex items-center hover:text-yellow-300">
-              <IconBrandInstagram size={20} />
-            </a>
-            <a href={`XXXXXXXXXXXXXXXXXXXXXXXXXXXX${alias}`} className="flex items-center hover:text-yellow-300">
-              <IconBrandGithub size={20} />
-            </a>
-            <a href={`XXXXXXXXXXXXXXXXXXXXXXXXXXXX${alias}`} className="flex items-center hover:text-yellow-300">
-              <IconBrandVercel size={20} />
-            </a>
+        <div className="flex flex-col border rounded-md bg-foreground/40 backdrop-blur-lg shadow-lg">
+          <ProfileCard
+            alias={alias}
+            firstName={firstName}
+            lastName={lastName}
+            birthDay={birthDay}
+            city={city}
+            country={country}
+            gender={gender}
+          />
+          <div className="flex items-center justify-around p-5">
+            {socials.map((social) => {
+              const IconComponent =
+                iconMap[social.label as keyof typeof iconMap];
+              return (
+                IconComponent && (
+                  <ContactLink
+                    key={social.label}
+                    href={social.link}
+                    icon={IconComponent}
+                  />
+                )
+              );
+            })}
+            {Object.entries(contactMap).map(([key, value]) => {
+              const IconComponent = value.icon;
+              return (
+                <ContactLink key={key} href={value.href} icon={IconComponent} />
+              );
+            })}
           </div>
         </div>
       </div>
