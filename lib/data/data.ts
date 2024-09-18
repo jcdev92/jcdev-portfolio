@@ -7,14 +7,14 @@ export const profile: JcDev = {
   email: "jcdeveloper92@gmail.com",
   phone: "+584120799500",
   birthDay: "1992-06-16T00:00:00.000Z",
-  gender: "male",
+  gender: "Male",
   city: "Valencia",
   country: "Venezuela",
   profileImg:
     "https://res.cloudinary.com/dwhztsc8v/image/upload/v1687545518/JC%20DEV/profile/perfil_frontal_orig-removebg-preview_oxasfp.png",
   jobTitle: "Full Stack Web Developer",
   aboutMe:
-    "I’m a Full-Stack Developer passionate about creating efficient and scalable tech solutions. With experience in both front-end and back-end, I’m skilled in technologies like React.js, Node.js, and PostgreSQL. My focus is on designing and developing applications that not only meet technical goals but also provide a smooth and engaging user experience. Additionally, my background in business administration allows me to understand challenges from a holistic perspective, combining strategy and technology to achieve solid results. I’m always learning and looking for new ways to optimize web development.",
+    "Greeting! and Welcome to my Portfolio, my name is Jesus Clemente and I’m a Full-Stack Developer passionate about creating efficient and scalable tech solutions. With experience in both front-end and back-end, I’m skilled in technologies like React.js, Node.js, and PostgreSQL. My focus is on designing and developing applications that not only meet technical goals but also provide a smooth and engaging user experience. Additionally, my background in business administration allows me to understand challenges from a holistic perspective, combining strategy and technology to achieve solid results. I’m always learning and looking for new ways to optimize web development.",
   biography:
     "My interest in computers began when I was around 15 years old, when I taught myself how to repair computers. Then years later I studied business administration at university, with the dream of creating my own IT company. However, it was only after different jobs, years later, that I discovered the fascinating world of code on the Internet.  To have a solid foundation, I studied the fundamentals of programming at Platzi Academy. Next, I enrolled in Academlo, an invaluable opportunity to learn more about web development. At Academlo, I developed applications with JavaScript-HTML CSS, REACT & NODE JS, such as an online store, Poke-App, CRUD users App, and several dynamic websites. Now, I want to use my skills to help others achieve their aspirations.",
   bioImage:

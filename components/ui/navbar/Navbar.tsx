@@ -3,7 +3,8 @@ import React from "react";
 import { FloatingDock } from "@/components/ui/navbar/floating-dock";
 import {
   IconHome,
-  IconTextCaption
+  IconInfoCircleFilled,
+  IconId,
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
@@ -18,15 +19,21 @@ export function FloatingDockDemo() {
     {
       title: "Who is JC DEV?",
       icon: (
-        <IconTextCaption className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconInfoCircleFilled className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/about",
     },
+    {
+      title: "Contact",
+      icon: (
+        <IconId className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/contact",
+    }
   ];
   return (
-    <div className="sticky bottom-0 z-50 p-10 flex items-center justify-center w-full">
+    <div className="sticky bottom-0 reltive z-20 p-10 flex items-center justify-center w-full">
       <FloatingDock
-        mobileClassName="" // only for demo, remove for production
         items={links}
       />
     </div>
