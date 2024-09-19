@@ -29,12 +29,12 @@ export default function ProfileCard({ alias, firstName, lastName, birthDay, city
           className="rounded-full object-cover max-w-full h-auto shadow-md shadow-primary-foreground"
         />
         <div className="text-center md:text-left">
-          <h1 className="text-3xl font-bold text-yellow-500 text-shadow-alias">{`${alias}`}</h1>
-          <h1 className="text-3xl font-bold text-primary-foreground">{`${firstName}`}</h1>
-          <h1 className="text-3xl font-bold text-primary-foreground">{`${lastName}`}</h1>
-          <p className="text-sm text-secondary-foreground">{`${city}, ${country} `}</p>
-          <p className="text-sm text-secondary-foreground">{`${formatedBirthday} `}</p>
-          <p className="text-sm text-secondary-foreground">{`${gender} `}</p>
+          <h1 className="md:text-3xl font-bold text-yellow-500 text-shadow-alias">{`${alias}`}</h1>
+          <h1 className="md:text-3xl font-bold text-primary-foreground">{`${firstName}`}</h1>
+          <h1 className="md:text-3xl font-bold text-primary-foreground">{`${lastName}`}</h1>
+          <p className="text-xs md:text-sm text-secondary-foreground">{`${city}, ${country} `}</p>
+          <p className="text-xs md:text-sm text-secondary-foreground">{`${formatedBirthday} `}</p>
+          <p className="text-xs md:text-sm text-secondary-foreground">{`${gender} `}</p>
         </div>
       </div>
     )
