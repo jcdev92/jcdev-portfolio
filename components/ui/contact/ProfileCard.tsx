@@ -30,8 +30,8 @@ export default function ProfileCard({ alias, firstName, lastName, birthDay, city
         />
         <div className="text-center md:text-left">
           <h1 className="md:text-3xl font-bold text-yellow-500 text-shadow-alias">{`${alias}`}</h1>
-          <h1 className="md:text-3xl font-bold text-primary-foreground">{`${firstName}`}</h1>
-          <h1 className="md:text-3xl font-bold text-primary-foreground">{`${lastName}`}</h1>
+          <h1 className="md:text-2xl font-bold text-secondary-foreground">{`${firstName}`}</h1>
+          <h1 className="md:text-2xl font-bold text-secondary-foreground">{`${lastName}`}</h1>
           <p className="text-xs md:text-sm text-secondary-foreground">{`${city}, ${country} `}</p>
           <p className="text-xs md:text-sm text-secondary-foreground">{`${formatedBirthday} `}</p>
           <p className="text-xs md:text-sm text-secondary-foreground">{`${gender} `}</p>

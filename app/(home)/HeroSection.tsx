@@ -1,5 +1,5 @@
 import React from "react";
-import { TextHoverEffect } from "@/components/ui/effects/text-hover-effect";
+import { TextHoverEffect } from "@/components/aceternityui/effects/text-hover-effect";
 import { profile } from '@/lib/data/data'
 
 export const HeroSection = () => {

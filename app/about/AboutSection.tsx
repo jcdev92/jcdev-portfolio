@@ -1,7 +1,7 @@
 'use client'
 import { profile } from "@/lib/data/data";
-import { TypewriterEffect } from "@/components/ui/effects/typewriter-effect";
-import { TextGenerateEffect } from "../../components/ui/effects/text-generate-effect";
+import { TypewriterEffect } from "@/components/aceternityui/effects/typewriter-effect";
+import { TextGenerateEffect } from "../../components/aceternityui/effects/text-generate-effect";
 import { motion } from "framer-motion";
 
 export default function AboutSection() {
