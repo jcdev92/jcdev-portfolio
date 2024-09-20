@@ -1,10 +1,12 @@
 "use client"
 import React from "react";
-import { FloatingDock } from "@/components/ui/navbar/floating-dock";
+import { FloatingDock } from "@/components/aceternityui/floating-dock";
 import {
   IconHome,
   IconInfoCircleFilled,
-  IconId,
+  IconBriefcaseFilled,
+  IconCode,
+  IconMail
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
@@ -24,15 +26,29 @@ export function FloatingDockDemo() {
       href: "/about",
     },
     {
+      title: "Skills",
+      icon: (
+        <IconCode className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/skills",
+    },
+    {
+      title: "Projects",
+      icon: (
+        <IconBriefcaseFilled className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+      ),
+      href: "/projects",
+    },
+    {
       title: "Contact",
       icon: (
-        <IconId className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+        <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
       href: "/contact",
     }
   ];
   return (
-    <div className="sticky bottom-0 reltive z-20 p-10 flex items-center justify-center w-full">
+    <div className="sticky bottom-0 z-20 p-10 flex items-center justify-center w-full">
       <FloatingDock
         items={links}
       />

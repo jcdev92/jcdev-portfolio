@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+
 /**
  * Note: Use position fixed according to your needs
  * Desktop navbar is better positioned at the bottom
@@ -102,7 +104,7 @@ const FloatingDockDesktop = ({
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
-        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
+        "mx-auto hidden md:flex h-16 gap-4 items-end  rounded-2xl bg-secondary/30 backdrop-blur-sm px-4 pb-3",
         className
       )}
     >
@@ -173,7 +175,7 @@ function IconContainer({
         style={{ width, height }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="aspect-square rounded-full bg-gray-200 dark:bg-neutral-800 flex items-center justify-center relative"
+        className="aspect-square rounded-full bg-secondary flex items-center justify-center relative"
       >
         <AnimatePresence>
           {hovered && (

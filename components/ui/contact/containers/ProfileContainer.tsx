@@ -10,7 +10,7 @@ interface ProfileCardProps {
     gender: string;
 }
 
-export default function ProfileCard({ alias, firstName, lastName, birthDay, city, country, gender }: ProfileCardProps) {
+export default function ProfileContainer({ alias, firstName, lastName, birthDay, city, country, gender }: ProfileCardProps) {
 
     const formatedBirthday = new Date(birthDay).toLocaleDateString("en-US", {
         year: "numeric",

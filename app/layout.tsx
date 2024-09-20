@@ -37,7 +37,7 @@ export default function RootLayout({
               <FloatingDockDemo />
             </main>
           </ThemeProvider>
-          <BackgroundBeams className="absolute inset-0 z-0 bg-background" />
+          <BackgroundBeams className="absolute inset-0 z-0" />
         </body>
       </html>
     </>

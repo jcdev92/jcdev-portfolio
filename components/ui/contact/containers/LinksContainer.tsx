@@ -1,4 +1,4 @@
-import ContactLink from "./ContactLink";
+import ContactLink from "./LinksComponent";
 import { Social } from "@/lib/types";
 import {
     IconPhone,
