@@ -20,14 +20,13 @@ export default function AboutSection() {
       id="about"
       className="p-5 md:p-20 relative z-10 md:h-screen flex items-center overflow-y-auto"
     >
-      <div className="container mx-auto">
-        {/* Animación del título */}
+      <div className="container mx-auto backdrop-blur-md">
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 2 }} 
         >
-          <TypewriterEffect words={words} className="p-10 text-2xl" />
+          <TypewriterEffect words={words} className=" p-10 text-4xl md:text-9xl" />
         </motion.div>
         <motion.div
           initial={{ y: -100, opacity: 0 }}
@@ -35,7 +34,7 @@ export default function AboutSection() {
           transition={{ duration: 0.7, delay: 2.2 }}
           className="flex flex-col gap-10 mt-5"
         >
-          <div className="md:p-10">
+          <div className="p-2 md:p-10">
             <TextGenerateEffect words={aboutMe} className="text-center text-xs" />
           </div>
         </motion.div>

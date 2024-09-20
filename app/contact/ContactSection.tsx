@@ -20,7 +20,7 @@ export default function ContactSection() {
   return (
     <div className="w-full h-screen">
       <div className="w-full h-full flex justify-center items-center">
-        <div className="flex flex-col border rounded-md bg-foreground/40 backdrop-blur-lg shadow-lg">
+        <div className="flex flex-col border rounded-lg bg-background/80 shadow-lg hover:scale-105 transition-all ease-in-out backdrop-blur-sm">
           <ProfileCard
             alias={alias}
             firstName={firstName}

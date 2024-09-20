@@ -28,7 +28,7 @@ export default function RootLayout({
         <body className={`${ibm.className} relative`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
