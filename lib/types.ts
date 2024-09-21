@@ -12,7 +12,7 @@ export interface JcDev {
     jobTitle: string;
     aboutMe: string;
     biography: string;
-    bioImage: string;
+    bioImageLink: string;
     role: string;
     skills: Skill[];
     socials: Social[];
@@ -22,7 +22,8 @@ export interface JcDev {
 export interface Project {
     label: string;
     description: string;
-    image: string;
+    coverImage: string;
+    categories: string[];
     link: string;
     github: string;
     projectSkills: ProjectsSkill[];

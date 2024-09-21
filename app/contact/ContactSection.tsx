@@ -6,7 +6,7 @@ import React from "react";
 export default function ContactSection() {
   return (
     <section className="lg:h-screen flex items-center justify-center">
-      <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} borderWidth={2}>
+      <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} borderWidth={2} >
       <div className="flex flex-col rounded-lg items-center justify-center bg-secondary/40 backdrop-blur-md p-6 md:p-12 mx-auto">
         <div>
           <p className="font-medium text-blue-500 dark:text-blue-400">

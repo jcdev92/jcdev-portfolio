@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import { BackgroundBeams } from "@/components/aceternityui/background-beams";
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Acme } from "next/font/google";
 import { FloatingDockDemo } from "../components/ui/navbar/Navbar";
 import "./globals.css";
 import Template from "./template";
@@ -16,6 +16,11 @@ const ibm = IBM_Plex_Mono({
   weight: ["400", "700"],
 });
 
+const acme = Acme({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +30,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className={`${ibm.className} relative`}>
+        <body className={`${acme.className}`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
