@@ -21,51 +21,28 @@ export const profile: JcDev = {
     "https://res.cloudinary.com/dwhztsc8v/image/upload/v1687545518/JC%20DEV/profile/perfil_frontal_orig-removebg-preview_oxasfp.png",
   role: "admin",
   skills: [
-    {
-      label: "JavaScript",
-    },
-    {
-      label: "TypeScript",
-    },
-    {
-      label: "HTML5",
-    },
-    {
-      label: "CSS",
-    },
-    {
-      label: "Tailwind CSS",
-    },
-    {
-      label: "React JS",
-    },
-    {
-      label: "React Native",
-    },
-    {
-      label: "Next JS",
-    },
-    {
-      label: "Python",
-    },
-    {
-      label: "PostgreSQL",
-    },
-    {
-      label: "Sequelize",
-    },
-    {
-      label: "Node JS",
-    },
-    {
-      label: "Docker",
-    },
-    {
-      label: "Express JS",
-    },
-    {
-      label: "Nest JS",
-    },
+    { label: "javascript" },
+    { label: "typescript" },
+    { label: "html5" },
+    { label: "css3" },
+    { label: "tailwindcss" },
+    { label: "react" },
+    { label: "nextdotjs" },
+    { label: "python" },
+    { label: "postgresql" },
+    { label: "sequelize" },
+    { label: "nodejs" },
+    { label: "docker" },
+    { label: "express" },
+    { label: "nestjs" },
+    { label: "vercel" }, 
+    { label: "testinglibrary" },
+    { label: "jest" }, 
+    { label: "git" }, 
+    { label: "jira" }, 
+    { label: "github" }, 
+    { label: "gitlab" }, 
+    { label: "visualstudiocode" } 
   ],
   socials: [
     {
@@ -89,7 +66,7 @@ export const profile: JcDev = {
       link: "https://vercel.com/jcdev92s-projects",
     },
   ],
-  projects: [   
+  projects: [
     {
       label: "JC DEV Portfolio",
       description:
