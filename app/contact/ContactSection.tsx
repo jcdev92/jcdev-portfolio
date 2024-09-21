@@ -1,3 +1,4 @@
+import ShineBorder from "@/components/magicui/shine-border";
 import ContactCard from "@/components/ui/contact/card/ContactCard";
 import ContactForm from "@/components/ui/contact/form/ContactForm";
 import React from "react";
@@ -5,7 +6,8 @@ import React from "react";
 export default function ContactSection() {
   return (
     <section className="lg:h-screen flex items-center justify-center">
-      <div className="flex flex-col rounded-lg items-center justify-center  bg-secondary/40 backdrop-blur-md p-6 md:p-12 mx-auto">
+      <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} borderWidth={2}>
+      <div className="flex flex-col rounded-lg items-center justify-center bg-secondary/40 backdrop-blur-md p-6 md:p-12 mx-auto">
         <div>
           <p className="font-medium text-blue-500 dark:text-blue-400">
             Keep in touch
@@ -14,8 +16,8 @@ export default function ContactSection() {
             CARD CONTACT
           </h1>
           <p className="mt-3 text-gray-500 dark:text-gray-400">
-            We’d love to hear from you. Please fill out this form or shoot us an
-            email.
+            {`It's nice to hear from you. Please fill out this form or shoot us an
+            email.`}
           </p>
         </div>
         <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
@@ -25,6 +27,7 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+      </ShineBorder>
     </section>
   );
 }
