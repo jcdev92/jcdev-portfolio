@@ -21,7 +21,7 @@ export default function PortfolioSection() {
   return (
     <>
       <section className="pt-20 pb-12">
-        <div className="container mx-auto bg-secondary/40 backdrop-blur-sm p-10 rounded-lg">
+        <div className="container mx-auto p-10">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
@@ -53,7 +53,7 @@ export default function PortfolioSection() {
               </ul>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap -mx-4 gap-y-10">
             {
               projects.map(({ coverImage, categories, label, description, link, github }, index) => (
                 <PortfolioCard
