@@ -6,7 +6,6 @@ import {
   IconInfoCircleFilled,
   IconBriefcaseFilled,
   IconCode,
-  IconMail
 } from "@tabler/icons-react";
 
 export function FloatingDockDemo() {
@@ -39,13 +38,6 @@ export function FloatingDockDemo() {
       ),
       href: "/projects",
     },
-    {
-      title: "Contact",
-      icon: (
-        <IconMail className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-      ),
-      href: "/contact",
-    }
   ];
   return (
     <div className="sticky bottom-0 z-20 p-10 flex items-center justify-center w-full">

@@ -10,10 +10,10 @@ export interface JcDev {
     country: string;
     profileImg: string;
     jobTitle: string;
+    slogan: string;
     aboutMe: string;
     biography: string;
     bioImageLink: string;
-    role: string;
     skills: Skill[];
     socials: Social[];
     projects: Project[];
