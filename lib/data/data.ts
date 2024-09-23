@@ -14,10 +14,32 @@ export const profile: JcDev = {
     "https://res.cloudinary.com/dwhztsc8v/image/upload/v1687545518/JC%20DEV/profile/perfil_frontal_orig-removebg-preview_oxasfp.png",
   jobTitle: "Full Stack Developer",
   aboutMe:
-    "My name is Jesus Clemente and I’m a Full-Stack Web Developer passionate about creating efficient and scalable tech solutions. With experience in both front-end and back-end, I’m skilled in technologies like React.js, Node.js, and PostgreSQL. My background in business administration allows me to understand challenges from a holistic perspective, combining strategy and technology to achieve solid results. I’m always learning and looking for new ways to optimize web development.",
-  slogan: "My focus is on designing and developing applications that not only meet technical goals but also provide a smooth and engaging user experience.",
+    "Nice to meet you!, my name is Jesus Clemente, I’m a Full-Stack Web Developer passionate about creating efficient and scalable tech solutions. My focus is on designing and developing applications that not only meet technical goals but also provide a smooth and engaging user experience.",
+  aboutList: [
+    {
+      title: "Full-Stack Expertise",
+      description:
+        "Proficient in front-end and back-end development using React.js, Node.js, Express.js, and MongoDB. Crafting scalable and efficient web applications.",
+      icon: "code",
+    },
+    {
+      title: "Team Collaboration",
+      description:
+        "Skilled in remote teamwork, contributing to open-source projects like Gamification App and Carpincho Security (check 'dev sphere' on GitHub).",
+      icon: "users",
+    },
+    {
+      title: "Continuous Learning",
+      description:
+        "Committed to staying up-to-date with the latest technologies and best practices, ensuring innovation in every project.",
+        icon: "book-open",
+    },
+  ],
+
+  slogan:
+    "Turning ideas into efficient digital solutions, with technology and innovation at the core of every project.",
   biography:
-    "My interest in computers began when I was around 15 years old, when I taught myself how to repair computers. Then years later I studied business administration at university, with the dream of creating my own IT company. However, it was only after different jobs, years later, that I discovered the fascinating world of code on the Internet.  To have a solid foundation, I studied the fundamentals of programming at Platzi Academy. Next, I enrolled in Academlo, an invaluable opportunity to learn more about web development. At Academlo, I developed applications with JavaScript-HTML CSS, REACT & NODE JS, such as an online store, Poke-App, CRUD users App, and several dynamic websites. Now, I want to use my skills to help others achieve their aspirations.",
+    "My interest in computers began when I was around 15 years old, when I taught myself how to repair computers. Then years later I studied business administration at university, with the dream of creating my own IT company. However, it was only after different jobs, years later, that I discovered the fascinating world of code on the Internet.  To have a solid foundation, I studied the fundamentals of programming at Platzi Academy. Next, I enrolled in Academlo, an invaluable opportunity to learn more about web development. At Academlo, I developed applications with JavaScript-HTML CSS, REACT & NODE JS, such as an online store, Poke-App, CRUD users App, and several dynamic websites. Now, I want to use my skills to help others achieve their aspirations.  My background in business administration allows me to understand challenges from a holistic perspective, combining strategy and technology to achieve solid results. I’m always learning and looking for new ways to optimize web development",
   bioImageLink:
     "https://res.cloudinary.com/dwhztsc8v/image/upload/v1687545518/JC%20DEV/profile/perfil_frontal_orig-removebg-preview_oxasfp.png",
   skills: [
@@ -34,14 +56,14 @@ export const profile: JcDev = {
     { label: "docker" },
     { label: "express" },
     { label: "nestjs" },
-    { label: "vercel" }, 
+    { label: "vercel" },
     { label: "testinglibrary" },
-    { label: "jest" }, 
-    { label: "angular" }, 
-    { label: "jira" }, 
-    { label: "github" }, 
-    { label: "gitlab" }, 
-    { label: "visualstudiocode" } 
+    { label: "jest" },
+    { label: "angular" },
+    { label: "jira" },
+    { label: "github" },
+    { label: "gitlab" },
+    { label: "visualstudiocode" },
   ],
   socials: [
     {
@@ -70,8 +92,8 @@ export const profile: JcDev = {
       label: "JC DEV Portfolio",
       description:
         "It's my personal protfolio, a full stack web app, it has backend, a CMS panel made by myself and his respective frontend.",
-        categories: ["All", "Front-End"],
-        coverImage:
+      categories: ["All", "Front-End"],
+      coverImage:
         "https://res.cloudinary.com/dwhztsc8v/image/upload/f_auto,q_auto/v1/JC%20DEV/projects/xfanextbrqnv8pj2rbla",
       link: "https://jcdev-portfolio-bootstrap.vercel.app/",
       github: "https://github.com/jcdev92/JCDEV_BOOTSRAP",
@@ -117,8 +139,8 @@ export const profile: JcDev = {
       label: "RECIPES API",
       description:
         "A REST FULL API FOR RECIPES, WAS MADE WITH EXPRESS JS, SEQUELIZE & POSGRES SQL, USING PASSPORT AND JWT FOR THE AUTHORIZATION AND AUTHENTICATION",
-        categories: ["All", "Back-End"],
-        coverImage:
+      categories: ["All", "Back-End"],
+      coverImage:
         "https://res.cloudinary.com/dwhztsc8v/image/upload/f_auto,q_auto/v1/JC%20DEV/projects/xtnxiwpcinxrngpe93wr",
       link: "https://github.com/jcdev92/food_recipes_api",
       github: "https://github.com/jcdev92/food_recipes_api",
@@ -154,8 +176,8 @@ export const profile: JcDev = {
       label: "POKEDEX",
       description:
         "It's a kind of pokedex, where you can find any Pokemon of all generations, you can see them in cards and know about their abilities, natures, and much more...  This project was made for the development of frontend skills with React JS.",
-        categories: ["All", "Front-End"],
-        coverImage:
+      categories: ["All", "Front-End"],
+      coverImage:
         "https://res.cloudinary.com/dwhztsc8v/image/upload/v1692228102/JC%20DEV/projects/pokedexapppokedex_ixk5as.png",
       link: "https://vercel.com/jcdev92/poke-api/6AXJUgqTYrWsSAjQvs3PSR29GdKx",
       github: "https://github.com/jcdev92/Pokedex-App",
@@ -186,8 +208,8 @@ export const profile: JcDev = {
       label: "RICK & MORTY WIKI",
       description:
         "It's a frontend project where you can consult and see info about locations and characters from the Rick and Morty TV Show",
-        categories: ["All", "Front-End"],
-        coverImage:
+      categories: ["All", "Front-End"],
+      coverImage:
         "https://res.cloudinary.com/dwhztsc8v/image/upload/v1692228103/JC%20DEV/projects/rick_mortyapp1_acr7cp.png",
       link: "https://rick-and-morty-jcdev.netlify.app/",
       github: "https://github.com/jcdev92/rick-and-morty",

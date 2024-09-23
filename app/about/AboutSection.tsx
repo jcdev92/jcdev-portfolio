@@ -1,10 +1,10 @@
 import ContactCard from "@/components/ui/contact/card/ContactCard";
-import { IconCloud, IconLockAccess, IconServer } from "@tabler/icons-react";
+import { IconBook, IconUsersGroup, IconCode } from "@tabler/icons-react";
 import { profile } from "@/lib/data/data";
 import ShineBorder from "@/components/magicui/shine-border";
 
 export default function AboutSection() {
-  const { slogan, aboutMe, alias } = profile;
+  const { slogan, aboutMe, aboutList, alias } = profile;
   return (
     <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="flex w-full items-center justify-center">
@@ -34,46 +34,23 @@ export default function AboutSection() {
                 {aboutMe}
               </p>
               <ul role="list" className="my-8 space-y-8 text-foreground/65">
-                <li className="flex gap-x-3">
-                  <IconCloud
-                    aria-hidden="true"
-                    className="mt-1 h-5 w-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-secondary-foreground">
-                      Push to deploy.
-                    </strong>{" "}
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Maiores impedit perferendis suscipit eaque, iste dolor
-                    cupiditate blanditiis ratione.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <IconLockAccess
-                    aria-hidden="true"
-                    className="mt-1 h-5 w-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-secondary-foreground">
-                      SSL certificates.
-                    </strong>{" "}
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                    qui lorem cupidatat commodo.
-                  </span>
-                </li>
-                <li className="flex gap-x-3">
-                  <IconServer
-                    aria-hidden="true"
-                    className="mt-1 h-5 w-5 flex-none text-indigo-600"
-                  />
-                  <span>
-                    <strong className="font-semibold text-secondary-foreground">
-                      Database backups.
-                    </strong>{" "}
-                    Ac tincidunt sapien vehicula erat auctor pellentesque
-                    rhoncus. Et magna sit morbi lobortis.
-                  </span>
-                </li>
+              {
+                aboutList.map(({title, description, icon}, index) => (
+                  <li key={index} className="flex gap-x-3">
+                    {
+                      icon === 'code' && <IconCode aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
+                      || icon === 'users' && <IconUsersGroup aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
+                      || icon === 'book-open' && <IconBook aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-indigo-600" />
+                    }
+                    <span>
+                      <strong className="font-semibold text-secondary-foreground">
+                        {title}
+                      </strong>{" "}
+                      {description}
+                    </span>
+                  </li>
+                ))
+              }
               </ul>
             </div>
           </div>
