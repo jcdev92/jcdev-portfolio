@@ -1,27 +1,22 @@
-'use client'
+"use client";
 import PortfolioCard from "@/components/ui/portfolio/PortfolioCard";
 import React, { useState } from "react";
 import { profile } from "@/lib/data/data";
 
 export default function PortfolioSection() {
   const [showCard, setShowCard] = useState("All");
-  const { projects } = profile
+  const { projects } = profile;
 
   const handleProject = (category: string) => {
     setShowCard(category);
   };
 
-  const categories = [
-    "All",
-    "Front-End",
-    "Back-End",
-    "Full-Stack"
-  ] 
+  const categories = ["All", "Front-End", "Back-End", "Full-Stack"];
 
   return (
     <>
-      <section className="pt-20 pb-12">
-        <div className="container mx-auto p-10">
+      <section className="pt-20 pb-12 overflow-hidden">
+        <div className="container mx-auto p-10 sm:px-6 lg:px-8">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
@@ -34,28 +29,29 @@ export default function PortfolioSection() {
           <div className="w-full flex flex-wrap justify-center -mx-4">
             <div className="w-full px-4">
               <ul className="flex flex-wrap justify-center mb-12 space-x-1">
-                {
-                  categories.map((category, index) => (
-                    <li className="mb-1" key={index}>
-                      <button
-                        onClick={() => handleProject(category)}
-                        className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
-                          showCard === category
-                            ? "activeClasses bg-secondary text-white"
-                            : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-background hover:text-secondary"
-                        }`}
-                      >
-                        {category}
-                      </button>
-                    </li>
-                  ))
-                }
+                {categories.map((category, index) => (
+                  <li className="mb-1" key={index}>
+                    <button
+                      onClick={() => handleProject(category)}
+                      className={`inline-block rounded-lg py-2 px-5 text-center text-base font-semibold transition md:py-3 lg:px-8 ${
+                        showCard === category
+                          ? "activeClasses bg-secondary text-white"
+                          : "inactiveClasses text-body-color dark:text-dark-6 hover:bg-background hover:text-secondary"
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
           <div className="flex flex-wrap -mx-4 gap-y-10">
-            {
-              projects.map(({ coverImage, categories, label, description, link, github }, index) => (
+            {projects.map(
+              (
+                { coverImage, categories, label, description, link, github },
+                index,
+              ) => (
                 <PortfolioCard
                   key={index}
                   coverImage={coverImage}
@@ -66,12 +62,11 @@ export default function PortfolioSection() {
                   github={github}
                   showCard={showCard}
                 />
-              ))
-            }
+              ),
+            )}
           </div>
         </div>
       </section>
     </>
   );
-};
-
+}

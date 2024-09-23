@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { FloatingDock } from "@/components/aceternityui/floating-dock";
 import {
@@ -7,6 +7,7 @@ import {
   IconBriefcaseFilled,
   IconCode,
 } from "@tabler/icons-react";
+import ShineBorder from "@/components/magicui/shine-border";
 
 export function FloatingDockDemo() {
   const links = [
@@ -41,9 +42,10 @@ export function FloatingDockDemo() {
   ];
   return (
     <div className="sticky bottom-0 z-20 p-10 flex items-center justify-center w-full">
-      <FloatingDock
-        items={links}
-      />
-    </div>
+      <FloatingDock items={links} desktopClassName="md:hidden" mobileClassName="bg-transparent"/>
+        <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} borderWidth={2} className="hidden md:flex md:rounded-lg">
+          <FloatingDock items={links} desktopClassName="bg-secondary/20 w-full flex justify-center rounded-md backdrop-blur-sm" mobileClassName="hidden"/>
+        </ShineBorder>
+      </div>
   );
 }
