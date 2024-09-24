@@ -8,7 +8,10 @@ export function IconCloudComponent() {
     return label
   }) || [];
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background/30 p-5 md:px-20 md:pb-20 pt-8 ">
+    <div className="relative flex flex-col h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background/30 px-5">
+      <h1 className="p-10 text-center text-5xl md:text-6xl  font-extrabold  bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-indigo-900">
+        SKILLS
+      </h1>
       <IconCloud iconSlugs={slugs} />
     </div>
   );
