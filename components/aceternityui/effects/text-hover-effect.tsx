@@ -22,13 +22,13 @@ export const TextHoverEffect = ({
             0,
             Math.min(100, ((cursor.x - svgRect.left) / svgRect.width) * 100),
           )
-        : 50;   
+        : 50;
       const cyPercentage = svgRect.height
         ? Math.max(
             0,
             Math.min(100, ((cursor.y - svgRect.top) / svgRect.height) * 100),
           )
-        : 50;   
+        : 50;
 
       setMaskPosition({
         cx: `${cxPercentage}%`,
@@ -59,11 +59,11 @@ export const TextHoverEffect = ({
         >
           {hovered && (
             <>
-              <stop offset="0%" stopColor={"var(--yellow-500)"} />
-              <stop offset="25%" stopColor={"var(--red-500)"} />
-              <stop offset="50%" stopColor={"var(--blue-500)"} />
-              <stop offset="75%" stopColor={"var(--cyan-500)"} />
-              <stop offset="100%" stopColor={"var(--violet-500)"} />
+              <stop offset="0%" stopColor="#FFEA00" />
+              <stop offset="25%" stopColor="#FF5722" /> 
+              <stop offset="50%" stopColor="#2196F3" /> 
+              <stop offset="75%" stopColor="#00BCD4" /> 
+              <stop offset="100%" stopColor="#9C27B0" />
             </>
           )}
         </linearGradient>
@@ -71,7 +71,7 @@ export const TextHoverEffect = ({
         <motion.radialGradient
           id="revealMask"
           gradientUnits="userSpaceOnUse"
-          r="20%"
+          r="30%"
           animate={maskPosition}
           transition={{ duration: duration ?? 0, ease: "easeOut" }}
         >
@@ -94,7 +94,7 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-7xl  "
+        className="font-[helvetica] font-bold stroke-neutral-200 dark:stroke-neutral-800 fill-transparent text-5xl sm:text-7xl"
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
