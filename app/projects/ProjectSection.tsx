@@ -21,7 +21,7 @@ export default function PortfolioSection() {
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="mx-auto mb-[60px] max-w-[510px] text-center">
-                <h1 className="text-4xl md:text-6xl font-semibold  bg-clip-text text-transparent bg-gradient-to-b from-background to-secondary-foreground text-shadow">
+                <h1 className="text-5xl md:text-6xl  font-extrabold  bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-indigo-900">
                   PROJECTS
                 </h1>
               </div>
