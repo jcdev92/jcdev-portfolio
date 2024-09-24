@@ -1,7 +1,7 @@
 import IconCloud from "@/components/magicui/icon-cloud";
 import { profile } from '@/lib/data/data'
 
-export function IconCloudDemo() {
+export function IconCloudComponent() {
   const { skills } = profile
 
   const slugs: string[] = skills?.map(({label}) => {

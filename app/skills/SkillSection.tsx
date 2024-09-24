@@ -1,10 +1,11 @@
-import { IconCloudDemo } from "@/components/ui/skills/iconCloudDemo";
+import { IconCloudComponent } from "@/components/ui/skills/IconCloudComponent";
+
 
 export default function SkillSection() {
 
   return (
     <section className="fex items-center justify-center h-screen">
-      <IconCloudDemo />
+      <IconCloudComponent />
     </section>
   );
 }

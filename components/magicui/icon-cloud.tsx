@@ -10,6 +10,7 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
+import { Spinner } from "../prelineui/Spinner";
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -66,10 +67,15 @@ type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
 
 export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
   const [data, setData] = useState<IconData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const { theme } = useTheme();
 
   useEffect(() => {
-    fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    setIsLoading(true);
+    fetchSimpleIcons({ slugs: iconSlugs }).then((fetchedData) => {
+      setData(fetchedData);
+      setIsLoading(false);
+    });
   }, [iconSlugs]);
 
   const renderedIcons = useMemo(() => {
@@ -79,6 +85,14 @@ export default function IconCloud({ iconSlugs }: DynamicCloudProps) {
       renderCustomIcon(icon, theme || "light"),
     );
   }, [data, theme]);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-full">
+        <Spinner />
+      </div>
+    );
+  }
 
   return (
     // @ts-expect-error cloud animation component default error
