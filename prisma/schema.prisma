@@ -14,19 +14,19 @@ datasource db {
 }
 
 model User {
-  id         Int       @id @default(autoincrement())
+  id         String   @id @default(uuid())
   firstName  String
   lastName   String
-  alias      String?
+  alias      String
   email      String    @unique
-  phone      String?
-  birthDay   DateTime?
-  gender     String?
-  city       String?
-  country    String?
-  profileImg String?
-  jobTitle   String?
-  aboutMe    String?
+  phone      String
+  birthDay   DateTime
+  gender     String
+  city       String
+  country    String
+  profileImg String
+  jobTitle   String
+  aboutMe    String
   aboutList AboutList[]
   socials Social[]
   skills Skill[]
@@ -37,40 +37,40 @@ model User {
 }
 
 model AboutList {
-  id          Int    @id @default(autoincrement())
+  id          String   @id @default(uuid())
   title       String
   description String
   icon        String
-  userId      Int
+  userId      String
   user        User   @relation(fields: [userId], references: [id])
 }
 
 model Social {
-  id     Int    @id @default(autoincrement())
+  id     String   @id @default(uuid())
   label  String
   link   String
-  userId Int
+  userId String
   user   User   @relation(fields: [userId], references: [id])
 }
 
 model Skill {
-  id           Int            @id @default(autoincrement())
+  id           String   @id @default(uuid())
   label        String
-  userId       Int
+  userId       String
   user         User           @relation(fields: [userId], references: [id])
   skillInProject ProjectSkill[]
 }
 
 
 model Project {
-  id          Int      @id @default(autoincrement())
+  id          String   @id @default(uuid())
   label       String
   description String
   categories  String[]
-  coverImage  String?
+  coverImage  String
   link        String
-  github      String?
-  userId Int
+  github      String
+  userId String
   user   User @relation(fields: [userId], references: [id])
   projectSkills ProjectSkill[]
   createdAt DateTime @default(now())
@@ -78,9 +78,9 @@ model Project {
 }
 
 model ProjectSkill {
-  id        Int @id @default(autoincrement())
-  projectId Int
-  skillId   Int
+  id        String   @id @default(uuid())
+  projectId String
+  skillId   String
 
   project Project @relation(fields: [projectId], references: [id])
   skill   Skill   @relation(fields: [skillId], references: [id])
