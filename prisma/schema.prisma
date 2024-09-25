@@ -13,4 +13,75 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id         Int       @id @default(autoincrement())
+  firstName  String
+  lastName   String
+  alias      String?
+  email      String    @unique
+  phone      String?
+  birthDay   DateTime?
+  gender     String?
+  city       String?
+  country    String?
+  profileImg String?
+  jobTitle   String?
+  aboutMe    String?
+  aboutList AboutList[]
+  socials Social[]
+  skills Skill[]
+  projects Project[]
 
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AboutList {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  icon        String
+  userId      Int
+  user        User   @relation(fields: [userId], references: [id])
+}
+
+model Social {
+  id     Int    @id @default(autoincrement())
+  label  String
+  link   String
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Skill {
+  id           Int            @id @default(autoincrement())
+  label        String
+  userId       Int
+  user         User           @relation(fields: [userId], references: [id])
+  skillInProject ProjectSkill[]
+}
+
+
+model Project {
+  id          Int      @id @default(autoincrement())
+  label       String
+  description String
+  categories  String[]
+  coverImage  String?
+  link        String
+  github      String?
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+  projectSkills ProjectSkill[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ProjectSkill {
+  id        Int @id @default(autoincrement())
+  projectId Int
+  skillId   Int
+
+  project Project @relation(fields: [projectId], references: [id])
+  skill   Skill   @relation(fields: [skillId], references: [id])
+}

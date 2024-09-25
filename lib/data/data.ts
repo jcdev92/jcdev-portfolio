@@ -38,10 +38,6 @@ export const profile: JcDev = {
 
   slogan:
     "Turning ideas into efficient digital solutions, with technology and innovation at the core of every project.",
-  biography:
-    "My interest in computers began when I was around 15 years old, when I taught myself how to repair computers. Then years later I studied business administration at university, with the dream of creating my own IT company. However, it was only after different jobs, years later, that I discovered the fascinating world of code on the Internet.  To have a solid foundation, I studied the fundamentals of programming at Platzi Academy. Next, I enrolled in Academlo, an invaluable opportunity to learn more about web development. At Academlo, I developed applications with JavaScript-HTML CSS, REACT & NODE JS, such as an online store, Poke-App, CRUD users App, and several dynamic websites. Now, I want to use my skills to help others achieve their aspirations.  My background in business administration allows me to understand challenges from a holistic perspective, combining strategy and technology to achieve solid results. I’m always learning and looking for new ways to optimize web development",
-  bioImageLink:
-    "https://res.cloudinary.com/dwhztsc8v/image/upload/v1687545518/JC%20DEV/profile/perfil_frontal_orig-removebg-preview_oxasfp.png",
   skills: [
     { label: "javascript" },
     { label: "typescript" },

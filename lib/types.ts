@@ -13,8 +13,6 @@ export interface JcDev {
   slogan: string;
   aboutMe: string;
   aboutList: AboutSection[];
-  biography: string;
-  bioImageLink: string;
   skills: Skill[];
   socials: Social[];
   projects: Project[];
