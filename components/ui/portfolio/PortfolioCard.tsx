@@ -6,7 +6,7 @@ interface PortfolioCardProps {
   showCard: string;
   categories: string[];
   coverImage: string;
-  label: string;
+  title: string;
   description: string;
   github: string;
   link: string;
@@ -16,7 +16,7 @@ export default function PortfolioCard({
   showCard,
   categories,
   coverImage,
-  label,
+  title,
   description,
   github,
   link,
@@ -42,7 +42,7 @@ export default function PortfolioCard({
               />
             </div>
             <div className="flex flex-col text-center gap-3 p-5 bg-secondary/60 backdrop-blur-sm shadow-lg rounded-b-lg relative flex-1">
-              <h1 className="font-semibold text-xl line-clamp-1">{label}</h1>
+              <h1 className="font-semibold text-xl line-clamp-1">{title}</h1>
               <p className="line-clamp-3 text-sm">
                 {description.toLowerCase()}
               </p>

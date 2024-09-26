@@ -14,30 +14,31 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid())
+  id         String      @id @default(uuid())
   firstName  String
   lastName   String
   alias      String
-  email      String    @unique
+  email      String      @unique
   phone      String
-  birthDay   DateTime
+  birthDay   String
   gender     String
   city       String
   country    String
   profileImg String
   jobTitle   String
   aboutMe    String
-  aboutList AboutList[]
-  socials Social[]
-  skills Skill[]
-  projects Project[]
+  slogan     String
+  aboutList  AboutList[]
+  socials    Social[]
+  skills     Skill[]
+  projects   Project[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model AboutList {
-  id          String   @id @default(uuid())
+  id          String @id @default(uuid())
   title       String
   description String
   icon        String
@@ -46,7 +47,7 @@ model AboutList {
 }
 
 model Social {
-  id     String   @id @default(uuid())
+  id     String @id @default(uuid())
   label  String
   link   String
   userId String
@@ -54,31 +55,30 @@ model Social {
 }
 
 model Skill {
-  id           String   @id @default(uuid())
-  label        String
-  userId       String
-  user         User           @relation(fields: [userId], references: [id])
-  skillInProject ProjectSkill[]
+  id              String         @id @default(uuid())
+  label           String
+  userId          String
+  user            User           @relation(fields: [userId], references: [id])
+  skillProjects ProjectSkill[]
 }
 
-
 model Project {
-  id          String   @id @default(uuid())
-  label       String
-  description String
-  categories  String[]
-  coverImage  String
-  link        String
-  github      String
-  userId String
-  user   User @relation(fields: [userId], references: [id])
+  id            String         @id @default(uuid())
+  title         String
+  description   String
+  categories    String[]
+  coverImage    String
+  link          String
+  github        String
+  userId        String
+  user          User           @relation(fields: [userId], references: [id])
   projectSkills ProjectSkill[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
 }
 
 model ProjectSkill {
-  id        String   @id @default(uuid())
+  id        String @id @default(uuid())
   projectId String
   skillId   String
 

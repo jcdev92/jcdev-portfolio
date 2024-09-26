@@ -2,7 +2,7 @@ export interface JcDev {
   firstName: string;
   lastName: string;
   alias: string;
-  mail: string;
+  email: string;
   phone: string;
   birthDay: string;
   gender: string;
@@ -19,7 +19,7 @@ export interface JcDev {
 }
 
 export interface Project {
-  label: string;
+  title: string;
   description: string;
   coverImage: string;
   categories: string[];

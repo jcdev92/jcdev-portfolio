@@ -4,7 +4,7 @@ export const profile: JcDev = {
   firstName: "Jesus Maria",
   lastName: "Clemente Garcia",
   alias: "JC DEV",
-  mail: "jcdeveloper92@gmail.com",
+  email: "jcdeveloper92@gmail.com",
   phone: "+584120799500",
   birthDay: "1992-06-16T00:00:00.000Z",
   gender: "Male",
@@ -85,7 +85,7 @@ export const profile: JcDev = {
   ],
   projects: [
     {
-      label: "JC DEV Portfolio",
+      title: "JC DEV Portfolio",
       description:
         "It's my personal protfolio, a full stack web app, it has backend, a CMS panel made by myself and his respective frontend.",
       categories: ["All", "Front-End"],
@@ -132,7 +132,7 @@ export const profile: JcDev = {
       ],
     },
     {
-      label: "RECIPES API",
+      title: "RECIPES API",
       description:
         "A REST FULL API FOR RECIPES, WAS MADE WITH EXPRESS JS, SEQUELIZE & POSGRES SQL, USING PASSPORT AND JWT FOR THE AUTHORIZATION AND AUTHENTICATION",
       categories: ["All", "Back-End"],
@@ -169,7 +169,7 @@ export const profile: JcDev = {
       ],
     },
     {
-      label: "POKEDEX",
+      title: "POKEDEX",
       description:
         "It's a kind of pokedex, where you can find any Pokemon of all generations, you can see them in cards and know about their abilities, natures, and much more...  This project was made for the development of frontend skills with React JS.",
       categories: ["All", "Front-End"],
@@ -201,7 +201,7 @@ export const profile: JcDev = {
       ],
     },
     {
-      label: "RICK & MORTY WIKI",
+      title: "RICK & MORTY WIKI",
       description:
         "It's a frontend project where you can consult and see info about locations and characters from the Rick and Morty TV Show",
       categories: ["All", "Front-End"],

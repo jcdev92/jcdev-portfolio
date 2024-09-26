@@ -39,14 +39,14 @@ export default function PortfolioSection() {
           <div className="flex flex-wrap -mx-4 gap-y-10 md:h-screen">
             {projects.map(
               (
-                { coverImage, categories, label, description, link, github },
+                { coverImage, categories, title, description, link, github },
                 index
               ) => (
                 <PortfolioCard
                   key={index}
                   coverImage={coverImage}
                   categories={categories}
-                  label={label}
+                  title={title}
                   description={description}
                   link={link}
                   github={github}

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "migrate": "pnpx prisma migrate dev",
+    "seed": "node seed.ts",
+    "seed:dev": "pnpx prisma migrate dev --preview-features node seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.20.0",

@@ -12,7 +12,7 @@ export default function ContactCard() {
     city,
     country,
     phone,
-    mail,
+    email,
   } = profile;
 
   const formatedBirthday = new Date(birthDay).toLocaleDateString("en-US", {
@@ -61,7 +61,7 @@ export default function ContactCard() {
           <h1 className="px-2 text-sm">{phone}</h1>
         </div>        <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
           <IconMail className="w-6 h-6" />
-          <h1 className="px-2 text-sm">{mail}</h1>
+          <h1 className="px-2 text-sm">{email}</h1>
         </div>
       </div>
     </div>
