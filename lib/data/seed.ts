@@ -5,20 +5,29 @@ const prisma = new PrismaClient();
 
 async function seedData() {
   try {
+    const existingUser = await prisma.user.findUnique({
+      where: { email: profile.email },
+    });
+
+    if (existingUser) {
+      console.log("User already exists");
+      return;
+    }
+
     const user = await prisma.user.create({
       data: {
-        firstName: profile.firstName,
-        lastName: profile.lastName,
+        first_name: profile.firstName,
+        last_name: profile.lastName,
         alias: profile.alias,
         email: profile.email,
         phone: profile.phone,
-        birthDay: profile.birthDay,
+        birth_day: profile.birthDay,
         gender: profile.gender,
         city: profile.city,
         country: profile.country,
-        profileImg: profile.profileImg,
-        jobTitle: profile.jobTitle,
-        aboutMe: profile.aboutMe,
+        profile_img: profile.profileImg,
+        job_title: profile.jobTitle,
+        about_me: profile.aboutMe,
         slogan: profile.slogan,
       },
     });
@@ -29,7 +38,7 @@ async function seedData() {
           title: item.title,
           description: item.description,
           icon: item.icon,
-          userId: user.id,
+          user_id: user.id,
         },
       });
     });
@@ -41,51 +50,75 @@ async function seedData() {
         data: {
           label: social.label,
           link: social.link,
-          userId: user.id,
+          user_id: user.id,
         },
       });
     });
     await Promise.all(socialsPromises);
 
     const skillsPromises = profile.skills.map(async (skill) => {
-      return await prisma.skill.create({
-        data: {
-          label: skill.label,
-          userId: user.id,
-        },
+      let foundSkill = await prisma.skill.findFirst({
+        where: { label: skill.label },
       });
+
+      if (!foundSkill) {
+        foundSkill = await prisma.skill.create({
+          data: {
+            label: skill.label,
+            user_id: user.id,
+          },
+        });
+      }
+
+      return foundSkill;
     });
     await Promise.all(skillsPromises);
 
     const projectsPromises = profile.projects.map(async (project) => {
-      const createdProject = await prisma.project.create({
-        data: {
-          title: project.title,
-          description: project.description,
-          coverImage: project.coverImage,
-          link: project.link,
-          github: project.github,
-          userId: user.id,
-        },
-      });
+      try {
+        const createdProject = await prisma.project.create({
+          data: {
+            title: project.title,
+            description: project.description,
+            categories: project.categories,
+            cover_image: project.coverImage,
+            link: project.link,
+            github: project.github,
+            user_id: user.id,
+          },
+        });
 
-      const projectSkillsPromises = project.projectSkills.map(
-        async ({ skill }) => {
-          const foundSkill = await prisma.skill.findFirst({
-            where: { label: skill.label },
-          });
-          if (!foundSkill) return;
+        const projectSkillsPromises = project.projectSkills.map(
+          async ({ skill }) => {
+            let foundSkill = await prisma.skill.findFirst({
+              where: { label: skill.label },
+            });
 
-          return await prisma.projectSkill.create({
-            data: {
-              projectId: createdProject.id,
-              skillId: foundSkill.id,
-            },
-          });
-        }
-      );
+            if (!foundSkill) {
+              foundSkill = await prisma.skill.create({
+                data: {
+                  label: skill.label,
+                  user_id: user.id,
+                },
+              });
+            }
 
-      await Promise.all(projectSkillsPromises);
+            console.log(
+              `Creating relation between Project: ${createdProject.title} and Skill: ${foundSkill.label}`,
+            );
+
+            return await prisma.projectSkill.create({
+              data: {
+                project_id: createdProject.id,
+                skill_id: foundSkill.id,
+              },
+            });
+          },
+        );
+        await Promise.all(projectSkillsPromises);
+      } catch (error) {
+        console.error(`Error creating project: ${project.title}`, error);
+      }
     });
 
     await Promise.all(projectsPromises);
