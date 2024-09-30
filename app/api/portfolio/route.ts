@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server';
 const prisma = new PrismaClient();
 
 export async function GET() {
-    // TRY AND CATCH
     try {
         const profile = await prisma.user.findFirst({
             select: {

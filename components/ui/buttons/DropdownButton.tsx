@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ShineBorder from "../magicui/shine-border";
+import ShineBorder from "../effects/shine-border";
 
 interface PropsCategory {
   categories: string[];
@@ -7,7 +7,7 @@ interface PropsCategory {
   showCard: string;
 }
 
-const Select = ({ categories, handleProject, showCard }: PropsCategory) => {
+const DropdownButton = ({ categories, handleProject, showCard }: PropsCategory) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -79,4 +79,4 @@ const Select = ({ categories, handleProject, showCard }: PropsCategory) => {
   );
 };
 
-export default Select;
+export default DropdownButton;

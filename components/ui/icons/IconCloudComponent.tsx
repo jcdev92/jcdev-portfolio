@@ -1,4 +1,4 @@
-import IconCloud from "@/components/magicui/icon-cloud";
+import IconCloud from "@/components/ui/icons/icon-cloud";
 import { profile } from '@/lib/data/data'
 
 export function IconCloudComponent() {

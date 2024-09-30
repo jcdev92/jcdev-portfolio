@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { IconBrandGithub, IconLink } from "@tabler/icons-react";
-import ShineBorder from "../../magicui/shine-border";
+import ShineBorder from "../../ui/effects/shine-border";
 
 interface PortfolioCardProps {
   showCard: string;

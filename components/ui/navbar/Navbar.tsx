@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import { FloatingDock } from "@/components/aceternityui/floating-dock";
+import { FloatingDock } from "@/components/ui/navbar/floating-dock";
 import {
   IconHome,
   IconInfoCircleFilled,
   IconBriefcaseFilled,
   IconCode,
 } from "@tabler/icons-react";
-import ShineBorder from "@/components/magicui/shine-border";
+import ShineBorder from "@/components/ui/effects/shine-border";
 
 export function FloatingDockDemo() {
   const links = [

@@ -1,8 +1,8 @@
 "use client";
-import PortfolioCard from "@/components/ui/portfolio/PortfolioCard";
+import ProjectCard from "@/components/ui/cards/ProjectCard";
 import React, { useState } from "react";
 import { profile } from "@/lib/data/data";
-import Select from "@/components/flowbiteui/Select";
+import DropdownButton from "@/components/ui/buttons/DropdownButton";
 
 export default function PortfolioSection() {
   const [showCard, setShowCard] = useState("All");
@@ -29,7 +29,7 @@ export default function PortfolioSection() {
           </div>
           <div className="w-full flex flex-wrap justify-center ">
             <div className="p-8">
-                <Select
+                <DropdownButton
                   categories={categories}
                   handleProject={handleProject}
                   showCard={showCard}
@@ -42,7 +42,7 @@ export default function PortfolioSection() {
                 { coverImage, categories, title, description, link, github },
                 index
               ) => (
-                <PortfolioCard
+                <ProjectCard
                   key={index}
                   coverImage={coverImage}
                   categories={categories}

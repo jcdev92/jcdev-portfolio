@@ -10,7 +10,7 @@ import {
   renderSimpleIcon,
   SimpleIcon,
 } from "react-icon-cloud";
-import { Spinner } from "../prelineui/Spinner";
+import { Spinner } from "../loader/Spinner";
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {

@@ -1,7 +1,7 @@
-import ContactCard from "@/components/ui/contact/card/ContactCard";
+import ContactCard from "@/components/ui/cards/ContactCard";
 import { IconBook, IconUsersGroup, IconCode } from "@tabler/icons-react";
 import { profile } from "@/lib/data/data";
-import ShineBorder from "@/components/magicui/shine-border";
+import ShineBorder from "@/components/ui/effects/shine-border";
 
 export default function AboutSection() {
   const { slogan, aboutMe, aboutList, alias } = profile;
