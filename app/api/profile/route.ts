@@ -22,9 +22,45 @@ export async function GET() {
                 about_me: true,
                 slogan: true,
                 about_list: true,
-                socials: true,
-                skills: true,
-                projects: true,
+                socials: {
+                    select: {
+                        id: true,
+                        label: true,
+                        link: true,
+                        user_id: false,
+                    },
+                },
+                skills: {
+                    select: {
+                        id: true,
+                        label: true,
+                        user_id: false,
+                    },
+                },
+                projects: {
+                    select: {
+                        id: true,
+                        title: true,
+                        description: true,
+                        cover_image: true,
+                        categories: true,
+                        github: true,
+                        link: true,
+                        project_skills: {
+                            select: {
+                                skill: {
+                                    select: {
+                                        id: true,
+                                        label: true,
+                                    }
+                                },
+                            }
+                        },
+                        user_id: false,
+                        createdAt: false,
+                        updatedAt: false,
+                    }
+                },
                 createdAt: false,
                 updatedAt: false,
             } 

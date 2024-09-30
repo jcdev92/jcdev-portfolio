@@ -63,23 +63,23 @@ export const profile: JcDev = {
   ],
   socials: [
     {
-      label: "LinkedIn",
+      label: "linkedin",
       link: "https://www.linkedin.com/in/jesus-maria-clemente-garcia/",
     },
     {
-      label: "GitHub",
+      label: "github",
       link: "https://github.com/jcdev92",
     },
     {
-      label: "Instagram",
+      label: "instagram",
       link: "https://www.instagram.com/jesusclemente.dev/",
     },
     {
-      label: "X",
+      label: "x",
       link: "https://www.x.com/jcdev92",
     },
     {
-      label: "Vercel",
+      label: "vercel",
       link: "https://vercel.com/jcdev92s-projects",
     },
   ],
@@ -96,37 +96,32 @@ export const profile: JcDev = {
       projectSkills: [
         {
           skill: {
-            label: "Node JS",
+            label: "postgresql",
           },
         },
         {
           skill: {
-            label: "PostgreSQL",
+            label: "react",
           },
         },
         {
           skill: {
-            label: "React JS",
+            label: "sequelize",
           },
         },
         {
           skill: {
-            label: "Sequelize",
+            label: "javascript",
           },
         },
         {
           skill: {
-            label: "JavaScript",
+            label: "express",
           },
         },
         {
           skill: {
-            label: "Express JS",
-          },
-        },
-        {
-          skill: {
-            label: "Tailwind CSS",
+            label: "tailwindcss",
           },
         },
       ],
@@ -143,27 +138,22 @@ export const profile: JcDev = {
       projectSkills: [
         {
           skill: {
-            label: "Node JS",
+            label: "sequelize",
           },
         },
         {
           skill: {
-            label: "Sequelize",
+            label: "postgresql",
           },
         },
         {
           skill: {
-            label: "PostgreSQL",
+            label: "javascript",
           },
         },
         {
           skill: {
-            label: "JavaScript",
-          },
-        },
-        {
-          skill: {
-            label: "Express JS",
+            label: "express",
           },
         },
       ],
@@ -171,7 +161,7 @@ export const profile: JcDev = {
     {
       title: "POKEDEX",
       description:
-        "It's a kind of pokedex, where you can find any Pokemon of all generations, you can see them in cards and know about their abilities, natures, and much more...  This project was made for the development of frontend skills with React JS.",
+        "It's a kind of pokedex, where you can find any Pokemon of all generations, you can see them in cards and know about their abilities, natures, and much more...  This project was made for the development of frontend skills with react.",
       categories: ["All", "Front-End"],
       coverImage:
         "https://res.cloudinary.com/dwhztsc8v/image/upload/v1692228102/JC%20DEV/projects/pokedexapppokedex_ixk5as.png",
@@ -180,22 +170,22 @@ export const profile: JcDev = {
       projectSkills: [
         {
           skill: {
-            label: "HTML5",
+            label: "html5",
           },
         },
         {
           skill: {
-            label: "React JS",
+            label: "react",
           },
         },
         {
           skill: {
-            label: "CSS",
+            label: "css3",
           },
         },
         {
           skill: {
-            label: "JavaScript",
+            label: "javascript",
           },
         },
       ],
@@ -212,22 +202,22 @@ export const profile: JcDev = {
       projectSkills: [
         {
           skill: {
-            label: "React JS",
+            label: "react",
           },
         },
         {
           skill: {
-            label: "HTML5",
+            label: "html5",
           },
         },
         {
           skill: {
-            label: "CSS",
+            label: "css3",
           },
         },
         {
           skill: {
-            label: "JavaScript",
+            label: "javascript",
           },
         },
       ],
