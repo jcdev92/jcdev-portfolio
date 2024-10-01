@@ -1,12 +1,24 @@
 "use client";
 import ProjectCard from "@/components/ui/cards/ProjectCard";
 import React, { useState } from "react";
-import { profile } from "@/lib/data/data";
 import DropdownButton from "@/components/ui/buttons/DropdownButton";
 
-export default function PortfolioSection() {
+interface ProjectsProps {
+  projects: project[]
+}
+
+interface project {
+  title: string;
+  description: string;
+  cover_image: string;
+  categories: string[];
+  github: string;
+  link: string;
+};
+
+
+export default function PortfolioSection({projects}: ProjectsProps) {
   const [showCard, setShowCard] = useState("All");
-  const { projects } = profile;
 
   const handleProject = (category: string) => {
     setShowCard(category);
@@ -39,12 +51,12 @@ export default function PortfolioSection() {
           <div className="flex flex-wrap -mx-4 gap-y-10 md:h-screen">
             {projects.map(
               (
-                { coverImage, categories, title, description, link, github },
+                { cover_image, categories, title, description, link, github },
                 index
               ) => (
                 <ProjectCard
                   key={index}
-                  coverImage={coverImage}
+                  coverImage={cover_image}
                   categories={categories}
                   title={title}
                   description={description}

@@ -1,9 +1,11 @@
 import React from "react";
 import { TextHoverEffect } from "@/components/ui/effects/text-hover-effect";
-import { profile } from "@/lib/data/data";
 
-export const HeroSection = () => {
-  const { alias } = profile;
+interface HeroSectionProps {
+  alias: string;
+}
+
+export const HeroSection = ({ alias }: HeroSectionProps) => {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-center gap-10 overflow-hidden rounded-md">

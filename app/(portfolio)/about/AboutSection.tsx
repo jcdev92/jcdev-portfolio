@@ -1,10 +1,20 @@
 import ContactCard from "@/components/ui/cards/ContactCard";
 import { IconBook, IconUsersGroup, IconCode } from "@tabler/icons-react";
-import { profile } from "@/lib/data/data";
 import ShineBorder from "@/components/ui/effects/shine-border";
 
-export default function AboutSection() {
-  const { slogan, aboutMe, aboutList, alias } = profile;
+interface AboutSectionProps {
+  slogan: string;
+  aboutMe: string;
+  aboutList: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  alias: string;
+}
+
+export default function AboutSection({ slogan, aboutMe, aboutList, alias }: AboutSectionProps) {
+  
   return (
     <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="flex w-full items-center justify-center">

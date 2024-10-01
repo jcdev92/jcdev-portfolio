@@ -1,12 +1,17 @@
 import IconCloud from "@/components/ui/icons/icon-cloud";
-import { profile } from '@/lib/data/data'
 
-export default function SkillsSection() {
-  const { skills } = profile
+interface SkillsProps {
+  skills: {
+    label: string;
+  }[]
+}
+
+export default function SkillsSection({skills}: SkillsProps) {
 
   const slugs: string[] = skills?.map(({label}) => {
     return label
   }) || [];
+  
   return (
     <section className="flex items-center justify-center h-screen">
       <div className="relative flex flex-col h-full w-full items-center justify-center overflow-hidden rounded-lg bg-background/30 px-5">
