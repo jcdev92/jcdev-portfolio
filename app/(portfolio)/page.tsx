@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import { HeroSection } from "./HeroSection";
 import { PrismaClient } from '@prisma/client';
+import Loading from "../loading";
 const prisma = new PrismaClient();
 
 export default async function Home() {
@@ -13,8 +15,10 @@ export default async function Home() {
   const alias = userData?.alias || 'Default Alias';
 
   return (
-    <div className="h-screen mx-auto relative z-10 rounded-md antialiased">
+    <Suspense fallback={ <Loading /> }>
+      <div className="h-screen mx-auto relative z-10 rounded-md antialiased">
         <HeroSection alias={alias}/>
-    </div>
+      </div>
+    </Suspense>
   );
 }

@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import PortfolioSection from "./ProjectSection";
 import { PrismaClient } from '@prisma/client';
+import Loading from "@/app/loading";
 const prisma = new PrismaClient();
 
 export default async function Project() {
@@ -19,6 +21,8 @@ export default async function Project() {
     });
 
     return (
-        <PortfolioSection projects={projects}/>
-    )
+      <Suspense fallback={<Loading />}>
+        <PortfolioSection projects={projects} />
+      </Suspense>
+    );
 }

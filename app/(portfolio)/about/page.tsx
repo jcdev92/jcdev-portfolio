@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import AboutSection  from "./AboutSection"
 import { PrismaClient } from '@prisma/client';
+import Loading from "@/app/loading";
 const prisma = new PrismaClient();
 
 export default async function About() {
@@ -23,5 +25,9 @@ export default async function About() {
   const aboutMe = userData?.about_me || 'Default About Me';
   const aboutList = userData?.about_list || [];
 
-  return <AboutSection alias={alias} slogan={slogan} aboutMe={aboutMe} aboutList={aboutList}/>
+  return (
+    <Suspense fallback={ <Loading /> }>
+      <AboutSection alias={alias} slogan={slogan} aboutMe={aboutMe} aboutList={aboutList}/>
+    </Suspense>
+  )
 }
