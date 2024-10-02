@@ -26,7 +26,7 @@ export default function ContactCard() {
     <div className="w-full max-w-sm overflow-hidden bg-secondary rounded-lg shadow-lg">
       <Image
         className="object-cover object-center w-full h-56"
-        src="/profile-removebg-preview.png"
+        src="/jcdev.jpg"
         alt="avatar"
         width={500}
         height={500}

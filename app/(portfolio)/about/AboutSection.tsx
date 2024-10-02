@@ -19,16 +19,16 @@ export default function AboutSection({ slogan, aboutMe, aboutList, alias }: Abou
     <div className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
       <div className="flex w-full items-center justify-center">
       <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start">
-        <div className="bg-secondary/60 backdrop-blur-sm p-5 rounded-t-lg rounded-b-none lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:p-8">
+        <div className="bg-secondary/60 backdrop-blur-sm p-8 rounded-t-lg rounded-b-none w-full flex items-center justify-center lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8">
           <div className="lg:pr-4">
             <div className="lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-indigo-600">
+              <p className="hidden lg:flex lg:text-base lg:font-semibold lg:leading-7 lg:text-indigo-600">
                 Deploy faster
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 WHO IS <span className="text-yellow-300 text-shadow-alias">{alias}</span> ?
               </h1>
-              <p className="mt-6 text-xl leading-8 text-card-foreground/65">
+              <p className="hidden lg:flex lg:flex-col lg:mt-6 lg:text-xl lg:leading-8 lg:text-card-foreground/65">
                 {slogan}
               </p>
             </div>
