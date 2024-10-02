@@ -14,12 +14,12 @@ export const profile: JcDev = {
     "https://res.cloudinary.com/dwhztsc8v/image/upload/v1687545518/JC%20DEV/profile/perfil_frontal_orig-removebg-preview_oxasfp.png",
   jobTitle: "Full Stack Developer",
   aboutMe:
-    "Nice to meet you!, my name is Jesus Clemente, I’m a Full-Stack Web Developer passionate about creating efficient and scalable tech solutions. My focus is on designing and developing applications that not only meet technical goals but also provide a smooth and engaging user experience.",
+    "Nice to meet you! my name is Jesus Clemente, I’m a Full-Stack Web Developer passionate about creating efficient and scalable tech solutions. My focus is on designing and developing applications that not only meet technical goals but also provide a smooth and engaging user experience.",
   aboutList: [
     {
       title: "Full-Stack Expertise",
       description:
-        "Proficient in front-end and back-end development using React.js, Node.js, Express.js, and MongoDB. Crafting scalable and efficient web applications.",
+        "Proficient in front-end and back-end development using React.js, Next.js, Node.js, Express.js, Nest.js, and PostgreSQL. Crafting scalable and efficient web applications.",
       icon: "code",
     },
     {
@@ -32,7 +32,7 @@ export const profile: JcDev = {
       title: "Continuous Learning",
       description:
         "Committed to staying up-to-date with the latest technologies and best practices, ensuring innovation in every project.",
-        icon: "book-open",
+      icon: "book-open",
     },
   ],
 

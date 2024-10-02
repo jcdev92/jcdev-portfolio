@@ -12,7 +12,7 @@ export interface JcDev {
   jobTitle: string;
   slogan: string;
   aboutMe: string;
-  aboutList: AboutSection[];
+  aboutList: AboutList[];
   skills: Skill[];
   socials: Social[];
   projects: Project[];
@@ -41,8 +41,37 @@ export interface Social {
   link: string;
 }
 
-type AboutSection = {
+type AboutList = {
   title: string;
   description: string;
   icon: string;
 };
+
+export interface aboutData {
+  alias: string;
+  slogan: string;
+  aboutMe: string;
+  aboutList: {
+    title: string;
+    description: string;
+    icon: string;
+  }[];
+} 
+
+export interface profile {
+    alias: string;
+    firstName: string;
+    lastName: string;
+    jobTitle: string;
+    birthDay: string;
+    city: string;
+    country: string;
+    phone: string;
+    email: string;
+}
+
+export type socials = {
+    id: string;
+    label: string;
+    link: string;
+}[]

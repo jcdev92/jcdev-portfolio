@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-import AboutSection  from "./AboutSection"
-import { PrismaClient } from '@prisma/client';
+import AboutSection from "./AboutSection";
+import { PrismaClient } from "@prisma/client";
 import Loading from "@/app/loading";
 const prisma = new PrismaClient();
 
 export default async function About() {
-  const userData = await prisma.user.findFirst({
+  const aboutData = await prisma.user.findFirst({
     select: {
       alias: true,
       slogan: true,
@@ -16,18 +16,65 @@ export default async function About() {
           description: true,
           icon: true,
         },
-      }
+      },
     },
   });
 
-  const alias = userData?.alias || 'Default Alias';
-  const slogan = userData?.slogan || 'Default Slogan';
-  const aboutMe = userData?.about_me || 'Default About Me';
-  const aboutList = userData?.about_list || [];
+  const profile = await prisma.user.findFirst({
+    select: {
+      first_name: true,
+      last_name: true,
+      alias: true,
+      job_title: true,
+      city: true,
+      country: true,
+      birth_day: true,
+      gender: true,
+      phone: true,
+      email: true,
+    },
+  });
+
+  const socials = await prisma.social.findMany({
+    select: {
+      id: true,
+      label: true,
+      link: true,
+    },
+  });
+
+  const mappedAboutData = aboutData
+    ? {
+        alias: aboutData.alias,
+        slogan: aboutData.slogan,
+        aboutMe: aboutData.about_me,
+        aboutList: aboutData.about_list.map((item) => ({
+          title: item.title,
+          description: item.description,
+          icon: item.icon,
+        })),
+      }
+    : null;
+
+  const mappedProfile = profile
+    ? {
+        firstName: profile.first_name,
+        lastName: profile.last_name,
+        alias: profile.alias,
+        jobTitle: profile.job_title,
+        city: profile.city,
+        country: profile.country,
+        birthDay: profile.birth_day,
+        gender: profile.gender,
+        phone: profile.phone,
+        email: profile.email,
+      }
+    : null;
+    
 
   return (
-    <Suspense fallback={ <Loading /> }>
-      <AboutSection alias={alias} slogan={slogan} aboutMe={aboutMe} aboutList={aboutList}/>
+    <Suspense fallback={<Loading />}>
+      <AboutSection aboutData={mappedAboutData} profile={mappedProfile} socials={socials} />
     </Suspense>
-  )
+  );
 }
