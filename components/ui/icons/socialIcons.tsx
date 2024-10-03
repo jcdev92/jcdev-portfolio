@@ -12,7 +12,6 @@ interface SocialsProps {
 }
 
 export const SocialIcons = ({ socials }: SocialsProps) => {
-    console.log(socials)
   return (
     <>
       {socials?.map(

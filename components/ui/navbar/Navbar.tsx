@@ -41,11 +41,23 @@ export function FloatingDockDemo() {
     },
   ];
   return (
-    <div className="sticky bottom-0 z-20 p-10 flex items-center justify-center w-full">
-      <FloatingDock items={links} desktopClassName="md:hidden" mobileClassName="bg-transparent"/>
-        <ShineBorder color={["#A07CFE", "#FE8FB5", "#FFBE7B"]} borderWidth={2} className="hidden md:flex md:rounded-lg">
-          <FloatingDock items={links} desktopClassName="bg-secondary/20 w-full flex justify-center rounded-md backdrop-blur-sm" mobileClassName="hidden"/>
-        </ShineBorder>
-      </div>
+    <div className="fixed inset-x-[60%] md:inset-x-[25%] lg:inset-x-[40%] bottom-0 m-10 z-20 flex items-center justify-center w-fit">
+      <FloatingDock
+        items={links}
+        desktopClassName="md:hidden"
+        mobileClassName="bg-transparent"
+      />
+      <ShineBorder
+        color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+        borderWidth={2}
+        className="hidden md:flex md:rounded-lg"
+      >
+        <FloatingDock
+          items={links}
+          desktopClassName="bg-secondary/20 w-full flex justify-center rounded-md backdrop-blur-sm"
+          mobileClassName="hidden"
+        />
+      </ShineBorder>
+    </div>
   );
 }
