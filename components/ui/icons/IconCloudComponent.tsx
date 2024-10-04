@@ -1,8 +1,13 @@
 import IconCloud from "@/components/ui/icons/icon-cloud";
-import { profile } from '@/lib/data/data'
 
-export function IconCloudComponent() {
-  const { skills } = profile
+interface SkillsProps {
+  skills: {
+    label: string;
+    icon: string;
+  }[];
+}
+
+export function IconCloudComponent({skills}: SkillsProps) {
 
   const slugs: string[] = skills?.map(({label}) => {
     return label

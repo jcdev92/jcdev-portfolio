@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import { BackgroundBeams } from "@/components/ui/backgound/background-beams";
+import { BackgroundBeams } from "@/components/ui/background/background-beams";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { FloatingDockDemo } from "../components/ui/navbar/Navbar";
