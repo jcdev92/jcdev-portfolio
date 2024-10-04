@@ -3,6 +3,10 @@
 # environment
 .env
 
+# seeder
+/lib/compiled
+/lib/data
+
 # dependencies
 /node_modules
 /.pnp
