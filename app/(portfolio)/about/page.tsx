@@ -48,10 +48,10 @@ export default async function About() {
         alias: aboutData.alias,
         slogan: aboutData.slogan,
         aboutMe: aboutData.about_me,
-        aboutList: aboutData.about_list.map((item) => ({
-          title: item.title,
-          description: item.description,
-          icon: item.icon,
+        aboutList: aboutData.about_list.map(({title, description, icon}) => ({
+          title,
+          description,
+          icon,
         })),
       }
     : null;
