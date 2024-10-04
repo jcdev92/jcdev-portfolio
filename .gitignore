@@ -5,8 +5,8 @@
 .env.local
 
 # seeder
-/lib/compiled
-/lib/data
+lib/compiled
+lib/data
 
 # dependencies
 /node_modules

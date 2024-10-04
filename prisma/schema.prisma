@@ -4,26 +4,30 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("POSTGRES_URL_NO_SSL")
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id          String   @id @default(uuid())
-  first_name  String   @map("firstName")
-  last_name   String   @map("lastName")
+  id          String      @id @default(uuid())
+  first_name  String      @map("firstName")
+  last_name   String      @map("lastName")
   alias       String
-  email       String   @unique
+  email       String      @unique
   phone       String
-  birth_day   String   @map("birthDay")
+  birth_day   String      @map("birthDay")
   gender      String
   city        String
   country     String
   profile_img String
-  job_title   String   @map("jobTitle")
-  about_me    String   @map("aboutMe")
+  job_title   String      @map("jobTitle")
+  about_me    String      @map("aboutMe")
   slogan      String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  about_list  AboutList[]
+  projects    Project[]
+  skills      Skill[]
+  socials     Social[]
 }
 
 model AboutList {
@@ -32,6 +36,7 @@ model AboutList {
   description String
   icon        String
   user_id     String @map("userId")
+  user        User   @relation(fields: [user_id], references: [id])
 }
 
 model Social {
@@ -39,29 +44,36 @@ model Social {
   label   String
   link    String
   user_id String
+  user    User   @relation(fields: [user_id], references: [id])
 }
 
 model Skill {
-  id      String @id @default(uuid())
-  label   String
-  user_id String
+  id             String         @id @default(uuid())
+  label          String
+  user_id        String
+  skill_projects ProjectSkill[]
+  user           User           @relation(fields: [user_id], references: [id])
 }
 
 model Project {
-  id          String   @id @default(uuid())
-  title       String
-  description String
-  categories  String[]
-  cover_image String   @map("coverImage")
-  link        String
-  github      String
-  user_id     String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             String         @id @default(uuid())
+  title          String
+  description    String
+  categories     String[]
+  cover_image    String         @map("coverImage")
+  link           String
+  github         String
+  user_id        String
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  user           User           @relation(fields: [user_id], references: [id])
+  project_skills ProjectSkill[]
 }
 
 model ProjectSkill {
-  id         String @id @default(uuid())
-  project_id String @map("projectId")
-  skill_id   String @map("skillId")
+  id         String  @id @default(uuid())
+  project_id String  @map("projectId")
+  skill_id   String  @map("skillId")
+  project    Project @relation(fields: [project_id], references: [id])
+  skill      Skill   @relation(fields: [skill_id], references: [id])
 }
