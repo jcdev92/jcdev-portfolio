@@ -48,11 +48,21 @@ export default async function About() {
         alias: aboutData.alias,
         slogan: aboutData.slogan,
         aboutMe: aboutData.about_me,
-        aboutList: aboutData.about_list.map(({title, description, icon}) => ({
-          title,
-          description,
-          icon,
-        })),
+        aboutList: aboutData.about_list.map(
+          ({
+            title,
+            description,
+            icon,
+          }: {
+            title: string;
+            description: string;
+            icon: string;
+          }) => ({
+            title,
+            description,
+            icon,
+          })
+        ),
       }
     : null;
 
@@ -70,11 +80,14 @@ export default async function About() {
         email: profile.email,
       }
     : null;
-    
 
   return (
     <Suspense fallback={<Loading />}>
-      <AboutSection aboutData={mappedAboutData} profile={mappedProfile} socials={socials} />
+      <AboutSection
+        aboutData={mappedAboutData}
+        profile={mappedProfile}
+        socials={socials}
+      />
     </Suspense>
   );
 }
