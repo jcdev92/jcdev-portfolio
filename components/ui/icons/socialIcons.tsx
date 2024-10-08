@@ -6,9 +6,9 @@ import {
   IconBrandInstagram,
   IconBrandX,
 } from "@tabler/icons-react";
-import { socials } from "@/lib/types";
+import { social } from "@/lib/types";
 interface SocialsProps {
-  socials: socials | null;
+  socials: social[] | null;
 }
 
 export const SocialIcons = ({ socials }: SocialsProps) => {

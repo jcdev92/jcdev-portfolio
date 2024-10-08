@@ -7,6 +7,7 @@ const prisma = new PrismaClient();
 export default async function Skills() {
   const skills = await prisma.skill.findMany({
     select: {
+      id: true,
       label: true,
     },
   });

@@ -2,20 +2,11 @@
 import ProjectCard from "@/components/ui/cards/ProjectCard";
 import React, { useState } from "react";
 import DropdownButton from "@/components/ui/buttons/DropdownButton";
+import { project } from "@/lib/types";
 
 interface ProjectsProps {
   projects: project[]
 }
-
-interface project {
-  title: string;
-  description: string;
-  cover_image: string;
-  categories: string[];
-  github: string;
-  link: string;
-};
-
 
 export default function PortfolioSection({projects}: ProjectsProps) {
   const [showCard, setShowCard] = useState("All");
@@ -51,18 +42,19 @@ export default function PortfolioSection({projects}: ProjectsProps) {
           <div className="flex flex-wrap -mx-4 gap-y-10 md:h-screen">
             {projects.map(
               (
-                { cover_image, categories, title, description, link, github },
+                { coverImage, categories, title, description, link, github, projectSkills },
                 index
               ) => (
                 <ProjectCard
                   key={index}
-                  coverImage={cover_image}
+                  coverImage={coverImage}
                   categories={categories}
                   title={title}
                   description={description}
                   link={link}
                   github={github}
                   showCard={showCard}
+                  projectSkills={projectSkills}
                 />
               )
             )}

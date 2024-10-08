@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { IconCode, IconMail, IconGift, IconMapPinFilled, IconPhone} from "@tabler/icons-react"
 import { SocialIcons } from '../icons/socialIcons';
-import { profile, socials } from '@/lib/types';
+import { profile, social } from '@/lib/types';
 
 interface ContactCardProps {
   profile: profile | null;
-  socials: socials | null;
+  socials: social[] | null;
 }
 
 export default function ContactCard({profile, socials}: ContactCardProps) {

@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { IconBrandGithub, IconLink } from "@tabler/icons-react";
 import ShineBorder from "../../ui/effects/shine-border";
+import { skill } from "@/lib/types";
+import SkillIcons from "../icons/skillIcons";
+("@/components/ui/icons/skillIcons");
 
 interface PortfolioCardProps {
   showCard: string;
@@ -10,6 +13,7 @@ interface PortfolioCardProps {
   description: string;
   github: string;
   link: string;
+  projectSkills: skill[];
 }
 
 export default function PortfolioCard({
@@ -20,6 +24,7 @@ export default function PortfolioCard({
   description,
   github,
   link,
+  projectSkills,
 }: PortfolioCardProps) {
   const category = categories?.find((category) => category === showCard);
 
@@ -46,6 +51,13 @@ export default function PortfolioCard({
               <p className="line-clamp-3 text-sm">
                 {description.toLowerCase()}
               </p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {projectSkills?.map(({ id, label }) => {
+                  const slugs: string[] = [];
+                  slugs.push(label);
+                  return <SkillIcons key={id} iconSlugs={slugs} />;
+                })}
+              </div>
               <div className="w-full flex justify-around p-4 mt-auto">
                 <a
                   href={github}

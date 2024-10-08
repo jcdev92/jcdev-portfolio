@@ -12,51 +12,46 @@ export interface JcDev {
   jobTitle: string;
   slogan: string;
   aboutMe: string;
-  aboutList: AboutList[];
-  skills: Skill[];
-  socials: Social[];
-  projects: Project[];
+  aboutList: aboutList[];
+  skills: skill[];
+  socials: social[];
+  projects: project[];
 }
 
-export interface Project {
+export interface project {
+  id: string;
   title: string;
   description: string;
   coverImage: string;
   categories: string[];
   link: string;
   github: string;
-  projectSkills: ProjectsSkill[];
+  projectSkills: skill[];
 }
 
-export interface ProjectsSkill {
-  skill: Skill;
-}
-
-export interface Skill {
+export type skill = {
+  id: string;
   label: string;
 }
 
-export interface Social {
+export type social = {
+  id: string;
   label: string;
   link: string;
 }
-
-type AboutList = {
-  title: string;
-  description: string;
-  icon: string;
-};
 
 export interface aboutData {
   alias: string;
   slogan: string;
   aboutMe: string;
-  aboutList: {
-    title: string;
-    description: string;
-    icon: string;
-  }[];
+  aboutList: aboutList[];
 } 
+
+type aboutList = {
+  title: string;
+  description: string;
+  icon: string;
+};
 
 export interface profile {
     alias: string;
@@ -69,9 +64,3 @@ export interface profile {
     phone: string;
     email: string;
 }
-
-export type socials = {
-    id: string;
-    label: string;
-    link: string;
-}[]

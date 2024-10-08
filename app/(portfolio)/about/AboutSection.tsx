@@ -1,12 +1,12 @@
 import ContactCard from "@/components/ui/cards/ContactCard";
 import { IconBook, IconUsersGroup, IconCode } from "@tabler/icons-react";
 import ShineBorder from "@/components/ui/effects/shine-border";
-import {aboutData, profile, socials } from '@/lib/types'
+import {aboutData, profile, social } from '@/lib/types'
 
 interface AboutSectionProps {
   aboutData: aboutData | null;
   profile: profile | null
-  socials: socials | null
+  socials: social[] | null
 }
 
 export default function AboutSection({

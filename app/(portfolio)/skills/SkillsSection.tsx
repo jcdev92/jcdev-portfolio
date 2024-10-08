@@ -1,9 +1,8 @@
 import IconCloud from "@/components/ui/icons/icon-cloud";
+import { skill } from "@/lib/types";
 
 interface SkillsProps {
-  skills: {
-    label: string;
-  }[]
+  skills: skill[]
 }
 
 export default function SkillsSection({skills}: SkillsProps) {

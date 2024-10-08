@@ -1,5 +1,5 @@
 import ContactLink from "./LinksComponent";
-import { Social } from "@/lib/types";
+import { social } from "@/lib/types";
 import {
     IconPhone,
     IconMail,
@@ -14,7 +14,7 @@ import {
 
   
   interface LinksContainerProps {
-    socials: Social[];
+    socials: social[];
     phone: string;
     mail: string;
   }
