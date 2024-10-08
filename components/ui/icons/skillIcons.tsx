@@ -34,5 +34,5 @@ export default function SkillIcons({ iconSlugs }: SkillIconsProps) {
     return <div>Loading icons...</div>;
   }
 
-  return <div className="flex space-x-2">{renderedIcons}</div>;
+  return <div className="w-6 h-6">{renderedIcons}</div>;
 }

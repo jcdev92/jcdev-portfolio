@@ -51,7 +51,7 @@ export default function PortfolioCard({
               <p className="line-clamp-3 text-sm">
                 {description.toLowerCase()}
               </p>
-              <div className="flex flex-wrap gap-2 justify-center">
+              <div className="flex flex-wrap gap-2 justify-around py-3">
                 {projectSkills?.map(({ id, label }) => {
                   const slugs: string[] = [];
                   slugs.push(label);
@@ -63,7 +63,7 @@ export default function PortfolioCard({
                   href={github}
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-white hover:text-yellow-500"
+                  className="text-foreground hover:text-yellow-500 hover:scale-125 transition-all ease-in-out"
                 >
                   <IconBrandGithub />
                 </a>
@@ -71,7 +71,7 @@ export default function PortfolioCard({
                   href={link}
                   target="_blank"
                   rel="noreferrer"
-                  className=" text-white hover:text-yellow-500"
+                  className="text-foreground hover:text-yellow-500 hover:scale-125 transition-all ease-in-out"
                 >
                   <IconLink />
                 </a>

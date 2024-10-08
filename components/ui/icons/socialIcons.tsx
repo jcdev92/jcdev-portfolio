@@ -20,7 +20,7 @@ export const SocialIcons = ({ socials }: SocialsProps) => {
             key={id}
             href={link}
             target="_blank"
-            className="text-primary hover:text-secondary-foreground hover:scale-110 transition-all ease-in-out"
+            className="text-primary hover:text-secondary-foreground hover:scale-125 transition-all ease-in-out"
           >
             {label === "linkedin" && <IconBrandLinkedin className="w-6 h-6" />}
             {label === "github" && <IconBrandGithub className="w-6 h-6" />}
