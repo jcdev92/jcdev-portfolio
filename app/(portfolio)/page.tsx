@@ -1,24 +1,35 @@
 import { Suspense } from "react";
 import { HeroSection } from "./HeroSection";
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 import Loading from "../loading";
-const prisma = new PrismaClient();
+import Error from "./error";
+import onreset from "@/lib/util";
 
 export default async function Home() {
-  
-  const userData = await prisma.user.findFirst({
-    select: {
-      alias: true,
-    },
-  });
+  const prisma = new PrismaClient();
+  let alias = "";
 
-  const alias = userData?.alias || 'Default Alias';
+  try {
+    const userData = await prisma.user.findFirst({
+      select: {
+        alias: true,
+      },
+    });
 
-  return (
-    <Suspense fallback={ <Loading /> }>
-      <div className="h-screen mx-auto relative z-10 rounded-md antialiased">
-        <HeroSection alias={alias}/>
-      </div>
-    </Suspense>
-  );
+    alias = userData?.alias || alias;
+
+    return (
+      <Suspense fallback={<Loading />}>
+        <div className="h-screen mx-auto relative z-10 rounded-md antialiased">
+          <HeroSection alias={alias} />
+        </div>
+      </Suspense>
+    );
+  } catch (error) {
+    return (
+      <Suspense fallback={<Loading />}>
+        <Error error={error as Error} reset={onreset}/>
+      </Suspense>
+    );
+  }
 }

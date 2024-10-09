@@ -2,9 +2,11 @@ import { Suspense } from "react";
 import AboutSection from "./AboutSection";
 import { PrismaClient } from "@prisma/client";
 import Loading from "@/app/loading";
-const prisma = new PrismaClient();
 
 export default async function About() {
+  
+  const prisma = new PrismaClient();
+  
   const aboutData = await prisma.user.findFirst({
     select: {
       alias: true,

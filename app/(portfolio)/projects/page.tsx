@@ -2,9 +2,11 @@ import { Suspense } from "react";
 import PortfolioSection from "./ProjectSection";
 import { PrismaClient } from "@prisma/client";
 import Loading from "@/app/loading";
-const prisma = new PrismaClient();
 
 export default async function Project() {
+  
+  const prisma = new PrismaClient();
+  
   const projects = await prisma.project.findMany({
     select: {
       id: true,
